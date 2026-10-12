@@ -1,0 +1,8 @@
+fonttools==4.63.0
+Pillow==12.3.0
+reportlab==4.4.9
+numpy==2.3.5
+pycairo==1.29.0
+freetype-py==2.5.1
+Brotli==1.2.0
+PyMuPDF==1.26.7

@@ -1,0 +1,8 @@
+{
+  "baseline_version": "0.506",
+  "working_version": "0.507",
+  "source_archive": "netfyr-font-release-0.506-source-specimens.zip",
+  "source_archive_sha256": "a88def10024c1456510b98aca0933d3accbad30f0e44df2d1e0daf9976393788",
+  "reference_archive_sha256": "380134d54c9d51461d7c2d13069044bf5d5e47075e585add28e478f8ff017e47",
+  "review_scope": "Individual subagent glyph comparisons; no imported reference outlines or native-reader certification."
+}

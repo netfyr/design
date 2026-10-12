@@ -1,0 +1,10 @@
+dist/
+node_modules/
+.sites-local/
+.openai/
+.build/
+.venv*/
+.calira/
+__pycache__/
+*.pyc
+*.[pP][dD][fF]

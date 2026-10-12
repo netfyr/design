@@ -1,0 +1,258 @@
+{
+  "version": "0.507",
+  "files": [
+    {
+      "source": "netfyrsans-Light.ttf",
+      "source_sha256": "7fd81156da803f83ef09ddd32f0c25ca87befa01de64147e77fa46802a5f7824",
+      "output": "netfyrsans-Light.woff2",
+      "output_sha256": "44bea1440aa6959f9860476b56f1b45c399ef8fdd151a8c3a1b4052759868f76",
+      "bytes": 115452,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-LightItalic.ttf",
+      "source_sha256": "4b228d8caf1deba683e2864ebe2799a6a44aa9d9b50bdcddb0e0501fecc4d18e",
+      "output": "netfyrsans-LightItalic.woff2",
+      "output_sha256": "90a1284f0903763e40d483a7093263d2eb48558adb49d4115863c10e81cb8e29",
+      "bytes": 122844,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-Regular.ttf",
+      "source_sha256": "8d7fedb79bac37d8d025871f0690794a140c657775c3bb1839a25ce4212a5dc1",
+      "output": "netfyrsans-Regular.woff2",
+      "output_sha256": "38084e98eaae26d85c8d7936636e70a8075d535d728b077e6fb185f32e1e8305",
+      "bytes": 117700,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-Italic.ttf",
+      "source_sha256": "7a7dc70a88dfbd8b3876799a933259890f7b62c6887b08bd14850cbf6a43bcc1",
+      "output": "netfyrsans-Italic.woff2",
+      "output_sha256": "181b6d2f120a4085b5967e13ebcfb302f1021dbfe6a3975d2b3bb29925f00cf5",
+      "bytes": 124432,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-Medium.ttf",
+      "source_sha256": "4a879e2f8f7c53d8c4cfa2d5df16d55a12c8beb6e937563bc6d87253ed825d77",
+      "output": "netfyrsans-Medium.woff2",
+      "output_sha256": "eba649e396f3e49c174f6a5376b8c7dbabfcc601f7277f5bd2e0f0ceaa14386a",
+      "bytes": 119348,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-MediumItalic.ttf",
+      "source_sha256": "98f1334998cb955f0598ae8baef9e7e30cc4926d1b99d39afce03d9d898b2eba",
+      "output": "netfyrsans-MediumItalic.woff2",
+      "output_sha256": "050c5853edbb16b1cb9209fc3ef08ed23106b9485796bdc43ad01e6eb6088565",
+      "bytes": 126780,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-SemiBold.ttf",
+      "source_sha256": "5661b3091923333e688647f56ed115494d8eb4d5891aef8e8a97b2478f94c386",
+      "output": "netfyrsans-SemiBold.woff2",
+      "output_sha256": "f3fd85dc0cc83710f6bfad72c89669fdbc2e7fc1b23be28714659bd61331dbc5",
+      "bytes": 121096,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-SemiBoldItalic.ttf",
+      "source_sha256": "a93bd0292eed8fdab77f39bd13710eb74aa141bb1547f85b758724c7c882de9c",
+      "output": "netfyrsans-SemiBoldItalic.woff2",
+      "output_sha256": "630461dc84b0cc49cf2fa4ff16193cccfded19255afabf1888bccc56e5b2d3a4",
+      "bytes": 127528,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-Bold.ttf",
+      "source_sha256": "517924a74f3d115585c679795853b2b5f11f4cd3c7c9f48b5c9e43b7a5433a18",
+      "output": "netfyrsans-Bold.woff2",
+      "output_sha256": "adfc2cb6e7953f5dbd0b7979baa638d884f78da3461894163494ac87bcaa9b1a",
+      "bytes": 121984,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-BoldItalic.ttf",
+      "source_sha256": "7649cd4a424e9859ee5797ea2ab4bd1dda8e051858afab715b244a5582b4065a",
+      "output": "netfyrsans-BoldItalic.woff2",
+      "output_sha256": "41126e5069bf8fafa6a43c13dc47e6d52a28465d69a3de8e20972286b70b0670",
+      "bytes": 129452,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-ExtraBold.ttf",
+      "source_sha256": "bd780768191ee2459cdd34ff8548ec9a7e5b0bdde5b4d925cab2b4f6d929fc02",
+      "output": "netfyrsans-ExtraBold.woff2",
+      "output_sha256": "da87ea216f0238215fc6e377360977adde44a47eaa33905021e2d57aebd9a5a8",
+      "bytes": 123520,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-ExtraBoldItalic.ttf",
+      "source_sha256": "fc225cc8de56d9e8f8655e5e823a91771f185592150bbd6c0d434c014f4a2edb",
+      "output": "netfyrsans-ExtraBoldItalic.woff2",
+      "output_sha256": "934847110d299988dcf116566256daabe85b2f4fd633f9c09e798f8d6d376075",
+      "bytes": 131280,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-Black.ttf",
+      "source_sha256": "c66734a29d21f0b11cda2f94570d6e4efdc91073a37e29e0e584432460afad05",
+      "output": "netfyrsans-Black.woff2",
+      "output_sha256": "4be6c3ba49f4122d666f8f477f89e630d333819227cf722039fdcd3f46a9abd2",
+      "bytes": 125840,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrsans-BlackItalic.ttf",
+      "source_sha256": "a2197603462d8f7e857331d1ca07f224833da514717e5205565cf60da3ff96dd",
+      "output": "netfyrsans-BlackItalic.woff2",
+      "output_sha256": "a465bd9a1fd1244194b9b87e5032dcbc43657a1af5668c4221a54432dbd601f6",
+      "bytes": 133396,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Light.ttf",
+      "source_sha256": "7ffd9bbb48bd21ab90e9633da3f442d8faf8f2264b5dc7f772bcfa890e3bf6e6",
+      "output": "netfyrmono-Light.woff2",
+      "output_sha256": "7cdea0321225f90d2ffffc1a77f63e249d127b68469c93df791427520bcd0d86",
+      "bytes": 109980,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-LightItalic.ttf",
+      "source_sha256": "90a43c0d276094c43c5bc6001d59e48333dd4bfbf7a9f190f414ada397fd7b09",
+      "output": "netfyrmono-LightItalic.woff2",
+      "output_sha256": "50e6e094a14aca9cf31d21dd98d6840d4ca89cbdc0ae649367149c65c8d544e5",
+      "bytes": 121328,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Regular.ttf",
+      "source_sha256": "242ae4bb9d29636c4105ac1c745421fdf73f181f5803bab3cc5861cf059a892f",
+      "output": "netfyrmono-Regular.woff2",
+      "output_sha256": "9c82f9e2ef7c35d398da99510a2f5f7fc45d2e1081dd750720addb9b138a49ec",
+      "bytes": 110092,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Italic.ttf",
+      "source_sha256": "f754727fad2bc612282009b3d51c12dce7a590af4bd794aff07e6bbc171538f5",
+      "output": "netfyrmono-Italic.woff2",
+      "output_sha256": "383fdb2f92b09f3769b4b092c9403311424fbbbf54e9d1086fa232fdbbe0d6eb",
+      "bytes": 122812,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Medium.ttf",
+      "source_sha256": "5765d58dd94f390ec7606ec1aaf1f9acdefc433d7402a6041ca616ab8955d33a",
+      "output": "netfyrmono-Medium.woff2",
+      "output_sha256": "2a0ab1d4beff4f3b71586a1ad505da4e91f3715167431c7ceec13f0549c6d75f",
+      "bytes": 113264,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-MediumItalic.ttf",
+      "source_sha256": "0913fa52e0ebf3f6979bedec6a26be7660f193939ac83b1a1d913c810d6ebffa",
+      "output": "netfyrmono-MediumItalic.woff2",
+      "output_sha256": "5468dfd4f3b05058c7ff36421154a2af3d9dabc24fa93be8821d1e908657d9ac",
+      "bytes": 124516,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-SemiBold.ttf",
+      "source_sha256": "aafde56b2b3837c4ccbfbccc8ee2baea68e32541a9cd1705cd6c210e24e14bd7",
+      "output": "netfyrmono-SemiBold.woff2",
+      "output_sha256": "45268e55a540c6c690af3071f5545a305bdb6539f500c068de978e3b619cc1e2",
+      "bytes": 111960,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-SemiBoldItalic.ttf",
+      "source_sha256": "9068faea16a1144b4a83a65517ceb6d8c301dd2a603fcf7cceeacde834e08b18",
+      "output": "netfyrmono-SemiBoldItalic.woff2",
+      "output_sha256": "cb7fb78a729b840bd7d0c490bce835ae8195222995decf7b67df967c8a5f0dae",
+      "bytes": 125720,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Bold.ttf",
+      "source_sha256": "ce0ad95cb51c733e562163b5f32ce2a6bac5e6de5da0766e8e2d4507e99fd305",
+      "output": "netfyrmono-Bold.woff2",
+      "output_sha256": "30bd07853676d3030a299f425535ccfa389b0e42cfb59ed6ecdb1afe7d50ebed",
+      "bytes": 115460,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-BoldItalic.ttf",
+      "source_sha256": "3e3764a0bf0f6ef5e043cf9de74c7e8247d1e762aa8413756bfb60b7ef0bc779",
+      "output": "netfyrmono-BoldItalic.woff2",
+      "output_sha256": "5f5e308f5cc5fe2a92ab82fa56f29d76f7efad40a3ba836404ad3310664dcf04",
+      "bytes": 127460,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-ExtraBold.ttf",
+      "source_sha256": "6b04cb56e8ee60932613ded9530591c0058629502871bc31a70f72254e70433d",
+      "output": "netfyrmono-ExtraBold.woff2",
+      "output_sha256": "19d600c85bddcba1925e5e628310d0149635b5e97d84070657cadc5a5a5048c6",
+      "bytes": 116604,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-ExtraBoldItalic.ttf",
+      "source_sha256": "e8ae7ef0c4bdc2a1bd6c6721b7f5b91302288385b94f37774da2609788f9196a",
+      "output": "netfyrmono-ExtraBoldItalic.woff2",
+      "output_sha256": "355d4fac50d402bf578741d1f05dbb5c7f52d92aefa4379c1a0769853d5dfd98",
+      "bytes": 128684,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-Black.ttf",
+      "source_sha256": "6cbe87584876795c249651fd1cfdcdc58918d3efbc75335801a74c1dff9595ce",
+      "output": "netfyrmono-Black.woff2",
+      "output_sha256": "a6b5acda5e2abaca2b7574950d5818ea72e567bc6792aa1bc2b553b4c213f83e",
+      "bytes": 118640,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    },
+    {
+      "source": "netfyrmono-BlackItalic.ttf",
+      "source_sha256": "b43b9b95e22bba8c5c51a55bd90390fbef30e6c99df37bc027b8dfc813969392",
+      "output": "netfyrmono-BlackItalic.woff2",
+      "output_sha256": "d4d9ff3483aca6e22461bc227f9513c59f9a35c412ea040d6642e0a145b6cfc5",
+      "bytes": 130576,
+      "cmap_metrics_and_layout_preserved": true,
+      "all_outlines_preserved": true
+    }
+  ],
+  "scope": "FontTools WOFF2 conversion; all outlines, cmap, metrics and selected metadata/layout preserved. Not vendor acceptance."
+}

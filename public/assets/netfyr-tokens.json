@@ -1,0 +1,41 @@
+{
+  "colors": {
+    "ink": "#211C19",
+    "paper": "#F7F2EA",
+    "orange": "#FF7A1A",
+    "deep-orange": "#AF4D10"
+  },
+  "spacing": {
+    "space-1": "4px",
+    "space-2": "8px",
+    "space-3": "12px",
+    "space-4": "16px",
+    "space-6": "24px",
+    "space-8": "32px",
+    "space-12": "48px",
+    "space-16": "64px"
+  },
+  "typography": {
+    "display": {
+      "size": "64px",
+      "weight": 400
+    },
+    "page-title": {
+      "size": "44px",
+      "weight": 600
+    },
+    "heading": {
+      "size": "28px",
+      "weight": 600
+    },
+    "body": {
+      "size": "16px",
+      "weight": 400
+    },
+    "code": {
+      "size": "14px",
+      "weight": 400
+    }
+  },
+  "notes": "Colors follow netfyr visual identity 0.505. Spacing and type scale are conventions for this library website."
+}

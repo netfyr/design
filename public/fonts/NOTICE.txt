@@ -1,0 +1,16 @@
+netfyr fonts and visual assets
+
+netfyr Sans and netfyr Mono are licensed under the SIL Open Font License 1.1.
+See OFL.txt in the font download. This license covers all glyphs in the fonts.
+
+The standalone netfyr flame, logo and wordmark artwork and identity documents
+remain all rights reserved. Font licensing does not grant trademark permission
+or permission to use the netfyr marks as another project's identity.
+Website software is licensed separately under MIT.
+
+No Apple artwork is included. U+F8FF is a private-use mapping of the netfyr
+flame within this font. This mapping does not imply affiliation with Apple.
+
+netfyr is independent. It is not a Red Hat product and is not endorsed by
+Red Hat. This deliverable does not assign endorsement or successor status.
+

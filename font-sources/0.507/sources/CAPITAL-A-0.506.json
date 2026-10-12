@@ -1,0 +1,41 @@
+{
+  "from": "0.505",
+  "to": "0.506",
+  "files": [
+    {
+      "path": "sources/recipes/counter_refinement.py",
+      "before_sha256": "eb6ca57272e1d3a1590668206ab988b603c38d4e79bd1765c42fdb6d991a2ff8",
+      "after_sha256": "6579e95497b14895fdd3d071b89aa55ae61c382a5bccb3ab51c30323a2f1ac5d"
+    },
+    {
+      "path": "sources/recipes/capital_a_refinement.py",
+      "before_sha256": null,
+      "after_sha256": "27ed73775ba0badd5c4cb2eac54e2b629e2e10c43901da6e2e72e8cb42ce1051"
+    },
+    {
+      "path": "sources/recipes/expand_family.py",
+      "before_sha256": "047bee6a55be7c45585e96c7f4686a5d4bf8f50b517309eefdc87710f353e43c",
+      "after_sha256": "cba177f62179ea41270d8fa5ca3b2a2921a5fe3e5536f3b9f633a3d52cd6513b"
+    },
+    {
+      "path": "sources/documents/build_brand.py",
+      "before_sha256": "7f8068e53606132a8710a35b8311424ecf4164b7a494a5cf5a2cfec282dd9dc5",
+      "after_sha256": "9c19f79c9392f0f01ff4b38539bda910044eb166912f9e975a14cb514ce91866"
+    },
+    {
+      "path": "sources/documents/build_specimen.py",
+      "before_sha256": "3cf23b3deea3558b6743a5f999f83e9f0d51e956107db5264c64fb2e04987179",
+      "after_sha256": "025ea217d6555530487d95a6c446344c26d20722cb660cc2da22b9b252a1ab1c"
+    },
+    {
+      "path": "sources/render_preview.py",
+      "before_sha256": "e7aec34235b299350e8f16cfc31b5c667a2d41c05f5b30ac239040d839ba25b0",
+      "after_sha256": "ae6774e2802b09401a33b395d96f6d401543c44eaa906d77b7d5c207a0a8f2a0"
+    },
+    {
+      "path": "validation/final-font-hashes.json",
+      "before_sha256": "c7cc5e6f058cf50632bdc3922eb6a1ae0becfd00151ead8e77e418db9b7633bf",
+      "after_sha256": "09282bf319311f773d96a8b46e74e22d5d0c1d4db37f9fe0c60b791a288826d9"
+    }
+  ]
+}

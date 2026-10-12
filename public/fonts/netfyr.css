@@ -1,0 +1,230 @@
+/* netfyr 0.507 — static faces, generated from the user's reviewed local TTF build. */
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Light.woff2?v=0.507") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-LightItalic.woff2?v=0.507") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Regular.woff2?v=0.507") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Italic.woff2?v=0.507") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Medium.woff2?v=0.507") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-MediumItalic.woff2?v=0.507") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-SemiBold.woff2?v=0.507") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-SemiBoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Bold.woff2?v=0.507") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-BoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-ExtraBold.woff2?v=0.507") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-ExtraBoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-Black.woff2?v=0.507") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr sans";
+  src: url("./netfyrsans-BlackItalic.woff2?v=0.507") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Light.woff2?v=0.507") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-LightItalic.woff2?v=0.507") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Regular.woff2?v=0.507") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Italic.woff2?v=0.507") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Medium.woff2?v=0.507") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-MediumItalic.woff2?v=0.507") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-SemiBold.woff2?v=0.507") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-SemiBoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Bold.woff2?v=0.507") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-BoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-ExtraBold.woff2?v=0.507") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-ExtraBoldItalic.woff2?v=0.507") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-Black.woff2?v=0.507") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "netfyr mono";
+  src: url("./netfyrmono-BlackItalic.woff2?v=0.507") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+.netfyr-sans { font-family: "netfyr sans", sans-serif; font-synthesis: none; }
+.netfyr-mono { font-family: "netfyr mono", monospace; font-synthesis: none; }
+.netfyr-cells { font-family: "netfyr mono", monospace; font-synthesis: none;
+  line-height: 1.25; letter-spacing: 0; white-space: pre; }

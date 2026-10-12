@@ -1,0 +1,28 @@
+{
+  "font": "netfyrsans-Bold.ttf",
+  "font_sha256": "517924a74f3d115585c679795853b2b5f11f4cd3c7c9f48b5c9e43b7a5433a18",
+  "wordmark": "netfyr",
+  "weight": 700,
+  "width": 440,
+  "height": 128,
+  "wordmark_scale": 0.10695187165775401,
+  "wordmark_baseline": 100.47058823529412,
+  "n_top": 44.0,
+  "small_flame_tip_top": 44,
+  "wordmark_ink_bounds": [
+    146,
+    23.465240641711233,
+    425.0374331550802,
+    124
+  ],
+  "flame_to_wordmark_ink_gap": 32,
+  "minimum_clear_space": 16,
+  "files": {
+    "netfyr-logo-ink.png": "6352668e9af74c1eaa7a0d3f3fab9674d0fdc9c3ccfa7ca66dde5ffeb388f1f7",
+    "netfyr-logo-ink.svg": "9fe620639e528879a8c1bc775e184a1ea7eac941a2eddbdc11dc1bec3a57cecf",
+    "netfyr-logo-paper.png": "925c47aad4f73c96fdc6ca449209b0b8ab8c0bf513689d0eeb9e34b870a9180d",
+    "netfyr-logo-paper.svg": "65054a642e68e2d42bfbee6b0986cefa3cc89df344738b882e81c95f2e9cd04f"
+  },
+  "reviewed_font_sha256": "90fe9e233a5a2ad1691ab900f4edeab762dd56f64b3738f7988137aa5964abf5",
+  "font_license_amendment": "../fonts/license-amendment.json"
+}

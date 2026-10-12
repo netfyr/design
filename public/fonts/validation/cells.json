@@ -1,0 +1,207 @@
+{
+  "track": "terminal cells and upright graphics",
+  "files": [
+    {
+      "file": "netfyrsans-Light.ttf",
+      "sha256": "df6c33a8e3c136d60dde80c71a4c5b29c6b05cb91fb2cae979498064282fe4eb",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-LightItalic.ttf",
+      "sha256": "91ab1f4613055113439a46c5d8bb0e81fe5f4a70267c68270d81efe92eeeb206",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-Regular.ttf",
+      "sha256": "e0fceef5352db39bb6709d9aafda02752ca0694dd1df644e4a76e44e25d9699b",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-Italic.ttf",
+      "sha256": "49689a5ce8c77d1022c6ca80d31a70095595bcdca75438868d31ed378835763d",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-Medium.ttf",
+      "sha256": "258c5983b45802405bf0f51f8994d81deb2a1252a8912391982e23131340b5aa",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-MediumItalic.ttf",
+      "sha256": "93a1d40cca63844d31ed24da99a2a1c9acd718c019cff6c2778741bf4c31d6b9",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-SemiBold.ttf",
+      "sha256": "4a0597f242cce9c05f0eeae651097ad0fcbb051a1b54b609fbbb71ecea36b944",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-SemiBoldItalic.ttf",
+      "sha256": "7044a5673ce0ba7639344ada1219431313ddc1b960fb481bf4d34f04d4794978",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-Bold.ttf",
+      "sha256": "90fe9e233a5a2ad1691ab900f4edeab762dd56f64b3738f7988137aa5964abf5",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-BoldItalic.ttf",
+      "sha256": "fb7726feee8dd378f864290eb342a9020b0930e5e065989b37649f55a86639de",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-ExtraBold.ttf",
+      "sha256": "489ed772db599dd55efc8a6aad54d5712c715fb2602bafe0a38f9e1ad510073a",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-ExtraBoldItalic.ttf",
+      "sha256": "22cccd586adce9148b20c1ce76391bf6057cea87dbe8680f6a56b7d726663851",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-Black.ttf",
+      "sha256": "5cbab426f0bbd6c49173eda835adc306e7d14e7aeb5f7bcf22ed4bf150d1dd0f",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrsans-BlackItalic.ttf",
+      "sha256": "bce6188d8d915a855e1656376dd7bfb0021b2c85796839a9435d7500d724a3a4",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Light.ttf",
+      "sha256": "58e666416e3dc1048c3b0563663bddffd0b9e1b997daba104b48b1e3d0eb1711",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-LightItalic.ttf",
+      "sha256": "0167f959cf95c1dae3c6a4274da1f2648bb57f708ceeae109ec6a5bbbbb1039c",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Regular.ttf",
+      "sha256": "f8a4b85cf19163c8110b7d2ce343e88314a4931ef7cfbca59953280295982147",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Italic.ttf",
+      "sha256": "d06e104440dc1ea51d011f656b320b6cc7b93d8011d0dd32d4845c286f624767",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Medium.ttf",
+      "sha256": "20f7045356b783451fd2c5e4c5b54b3f8a22417288873b9665ebb39341dde86a",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-MediumItalic.ttf",
+      "sha256": "204bf31fd41477abb65ea5dd3822af6e1395715a44b97bda1a5007c6385790b1",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-SemiBold.ttf",
+      "sha256": "a1b0d80402a9e3708a52c089a831610311751baa3f585f1df6bcdea8c9b0e31a",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-SemiBoldItalic.ttf",
+      "sha256": "ec95d4efbc026360a60d34d3053e6a42fe121b8eb7d0700474af932e3a0fd0e9",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Bold.ttf",
+      "sha256": "eedbcca9d5a8f57bcf6ddd0b1fde14ee0620c7f101b50df013a04fafed79da98",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-BoldItalic.ttf",
+      "sha256": "1994db0476b4067462234545cce35ced4813c2e19d0c164128a1bbb4fce6f455",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-ExtraBold.ttf",
+      "sha256": "c8ba26d47f4738c703c460209e6004c617eefd4f6beb3401f3300c1754947c9c",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-ExtraBoldItalic.ttf",
+      "sha256": "7737d3f4d7a0e1abe533a74c17c7a6f2886b46dbb9c562fca5a9a6e4e960e281",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-Black.ttf",
+      "sha256": "b89f7b99406fa64762c9ee88f9e4e78d684b82250137b2e931b51c28dea7237b",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 0,
+      "issues": []
+    },
+    {
+      "file": "netfyrmono-BlackItalic.ttf",
+      "sha256": "3e2c3bb3e55704e1bb7f8f740a30664b044838855cd6ae1286ec7c9d9ab29278",
+      "full_height_probes": 4,
+      "upright_graphics_compared": 422,
+      "issues": []
+    }
+  ],
+  "issues": [],
+  "passed": true,
+  "pid": 2387011,
+  "started": 1791811815.8795934,
+  "ended": 1791811818.610912,
+  "seconds": 2.7313191890716553
+}

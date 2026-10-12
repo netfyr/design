@@ -1,0 +1,81 @@
+{
+  "fonts": {
+    "netfyrsans-Light.ttf": "819f191274ffbbf2932089cf5e86810b3b8c56814e3f05dfd1d606690a48670e",
+    "netfyrsans-LightItalic.ttf": "a89fa0e3a999c782de61b500456aeea039e808fec4ca6d0a5c60df705697cc89",
+    "netfyrmono-Light.ttf": "96fdcef3a0e8a844f1fa5d958e801b7dece0a3062b5d71d7e2f7e16d4782d037",
+    "netfyrmono-LightItalic.ttf": "9a8acb39a143f6c1f31dc5cc985fd7b9a232359b654e391edd659957beaf2aa6",
+    "netfyrsans-Regular.ttf": "d0a4a7750011792324240f276648247786c468305e8ed64a0666c7b20315abd9",
+    "netfyrsans-Italic.ttf": "77033fad168453eaea642be5c38afee89636e26888247b4a678eb6392ba405a5",
+    "netfyrmono-Regular.ttf": "cf88868147bced9780deaef6c4ba161d64be37cc6f8906a0eb49ba92ed077016",
+    "netfyrmono-Italic.ttf": "680d99ac1c0754fbcd0e83834c9c0f7920da960d90cb6fa5749a8736574fd1ad",
+    "netfyrsans-Medium.ttf": "b2d12d072357d3ee5e6453c95d1e39b2a8e90b5284bc1cf265fc3b1ecdc86c53",
+    "netfyrsans-MediumItalic.ttf": "a23a4189e78a47647fdcdf4a926324c3ebadbf69daf5e97ce83badc112f5bcf0",
+    "netfyrmono-Medium.ttf": "273862fd7d6a8ea05412583f5af77a176f1fa3cd6fda4cacb85fd261e7598770",
+    "netfyrmono-MediumItalic.ttf": "11898b433e2ba07e17feb56d10cfbb0018af2c28d94a90a39d178d30e4446a46",
+    "netfyrsans-SemiBold.ttf": "75962541ea9f2a09c042317df8a026b59f00e3410c8a6a5073bcad9287bd8806",
+    "netfyrsans-SemiBoldItalic.ttf": "995a52ec5338898e339cebde2da60ddc6be06fa4a575026fbcd43fd0cad89ac5",
+    "netfyrmono-SemiBold.ttf": "abd5d247f6a82129140e2f3947b402ad87f5c4304aa48bfcdf68e9b1c18d38f4",
+    "netfyrmono-SemiBoldItalic.ttf": "c7cfc0422796dc31df7476dae11fc6b5b0c9fc3cc171b5d01970c92cfa4b3913",
+    "netfyrsans-Bold.ttf": "6850e1ed0ee98dbff3572383d1a7e0632a8b73f4d0cbeddd05509dffaa02ecb9",
+    "netfyrsans-BoldItalic.ttf": "88ba7827beccc6beafe6bdb8306142f0dea1f81a72f44d47116ff60a1ad5b31e",
+    "netfyrmono-Bold.ttf": "28c6e78c431606f96243c43f731260091d9444cb26ee0ee29c55b7342730923a",
+    "netfyrmono-BoldItalic.ttf": "d48d714eb48442ecb0178d11294ff4edfca7bb65dbccd68cadc406338985f27c",
+    "netfyrsans-ExtraBold.ttf": "29652ee7acae5bd5d8f52dccbdeabdf5ea3d3bbec0c0cd79f8c8d5051b033183",
+    "netfyrsans-ExtraBoldItalic.ttf": "7381bd88f7bd1462b725ce2fa7bd72c79e019dd87ceb416d22014efe04b2c726",
+    "netfyrmono-ExtraBold.ttf": "8736902fe7aea702ca6219543af11dc95112b5d85f7c3a13812abc148e7d8a9d",
+    "netfyrmono-ExtraBoldItalic.ttf": "b315f95620b34f86d734ce8ae456ef806ab9f4925f863e0d70cf6c4b32205085",
+    "netfyrsans-Black.ttf": "164232d953bc05cb387656ca0af03019d317fa37322ff9855e47013b951af90a",
+    "netfyrsans-BlackItalic.ttf": "f9b609d680844fcaf10c4297aea5615892cc307e1ec8b856ece6d6565d071783",
+    "netfyrmono-Black.ttf": "f4a0bf8725181bebad9d2e4e14187a6e69038fde42cd5574669750477a3ecec9",
+    "netfyrmono-BlackItalic.ttf": "718b462b5741e7e8ea724baa81126fbcc364a5726223416faeab5251cca82b46"
+  },
+  "references": {
+    "Noto Sans": {
+      "path": "/usr/share/fonts/noto/NotoSans-Regular.ttf",
+      "sha256": "478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823",
+      "version": "Version 2.015; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "Noto Serif": {
+      "path": "/usr/share/fonts/noto/NotoSerif-Regular.ttf",
+      "sha256": "19e72cd8d595fae5bd74a5206f5d938512e1183d4fed7abb1ec1be1d7efa5f88",
+      "version": "Version 2.015; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "DejaVu Sans": {
+      "path": "/usr/share/fonts/TTF/DejaVuSans.ttf",
+      "sha256": "6038a160b491e121c1f12c7bccb4a9c8730296e3adc1086a059404ed84b7451c",
+      "version": "Version 2.37"
+    },
+    "Noto Mono": {
+      "path": "/usr/share/fonts/noto/NotoSansMono-Regular.ttf",
+      "sha256": "65b5e2b2c4a1fba9ae8be1f026cb35b03dcb8886d9b2a4147054fde12f7e767d",
+      "version": "Version 2.014; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "Noto Math": {
+      "path": "/usr/share/fonts/noto/NotoSansMath-Regular.ttf",
+      "sha256": "d51afd5739c7ba6c44fcab35a88160e25dfb69a2d4ad0bd99533f8d894af1f96",
+      "version": "Version 3.000; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "Noto Symbols 2": {
+      "path": "/usr/share/fonts/noto/NotoSansSymbols2-Regular.ttf",
+      "sha256": "c4a0a80f0041ce4be81e2478faad22776d23edb98ae3f0d19bd37044820ecf9d",
+      "version": "Version 2.008"
+    },
+    "Noto Symbols": {
+      "path": "/usr/share/fonts/noto/NotoSansSymbols-Regular.ttf",
+      "sha256": "d0e98e9a2c046594c5021437273943be7e79e0fd980fde125279e22302212595",
+      "version": "Version 2.003; ttfautohint (v1.8.4.7-5d5b)"
+    },
+    "Libertinus Math": {
+      "path": "/usr/share/fonts/libertinus/LibertinusMath-Regular.otf",
+      "sha256": "ded714b0d3808af527438ed7a85f16933133f66a12104c4a83db4cc248888011",
+      "version": "Version 7.051;RELEASE"
+    }
+  },
+  "render_scale": {
+    "project_px_per_em": 64,
+    "reference_px_per_em": 76,
+    "context_px_per_em": 20,
+    "reference_context_px_per_em": 22,
+    "initial_proof_label_erratum": "Initial proofs incorrectly claim project and references have the same em scale; normalized metrics in case JSON are authoritative for numerical comparisons."
+  }
+}
