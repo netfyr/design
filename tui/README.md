@@ -1,14 +1,14 @@
 # netfyr terminal design library
 
-The definitive reference for netfyr TUI components: their implementation,
-appropriate uses, interaction states, layout and language. The application
-imports the `netfyr-tui-design` Rust crate from this directory. Change a shared
-component here rather than creating a second renderer in an application.
+The `netfyr-tui-design` Rust crate provides shared TUI components and their
+interaction, layout and wording contracts. Applications import this crate;
+change shared renderers here.
 
 ## Start here
 
 | Reference | Owns |
 | --- | --- |
+| [Shared design principles](../principles.md) | Responsive feedback, retained context and truthful state across surfaces |
 | [Component catalogue](components.md) | Which component to use, its states, implementation and verification |
 | [Keyboard bindings](bindings.md) | Canonical action families, focus, modifiers and hints; TUI-K1–K5 |
 | [Searchable dropdown](dropdown.md) | One shared option panel for editable interface fields and finite choices; TUI-D1–D6 |
@@ -22,8 +22,7 @@ Cross-project [wording](../../specs/wording.md),
 [identity](../../specs/identity.md) and [interaction](../../specs/interaction.md)
 remain their owning documents; their approval status is unchanged. The
 [application specification](../../netfyr-tui/specs/tui.md) owns netfyr-specific
-flows and backend capabilities. This library cannot create a networking
-capability or override a reviewed plan's authority.
+flows and backend capabilities.
 
 ## Code and examples
 
@@ -87,8 +86,8 @@ cargo run --locked --example gallery -- --snapshot
 Snapshots omit colour and underline; buffer tests verify those styles.
 
 The design site's `/components/tui/` catalogue plays exported frames from these
-same renderers. Regenerate
-them from the repository root after changing a shared component or gallery fixture:
+renderers. Regenerate them from the repository root after changing a shared
+component or gallery fixture:
 
 ```sh
 cargo run --locked --manifest-path tui/Cargo.toml --example gallery -- --export-previews > web/tui/previews.json
@@ -112,7 +111,6 @@ It drives the actual gallery keys, checks the resulting terminal text, captures
 each interaction, and encodes a loop with readable pauses. It writes six GIFs
 and a settings poster; the existing dropdown PNGs stay unchanged.
 
-Do not treat hand-drawn diagrams or old screenshots as the implementation.
-Change the shared renderer, update its example and affected adapter tests, and
-record the rule and reason in the same change. Components must remain usable
-at 32×12, with Unicode, without colour and while resizing.
+Update the renderer's example and affected adapter tests in the same change,
+with the applicable rule and reason. Components must remain usable at 32×12,
+with Unicode, without colour and while resizing.

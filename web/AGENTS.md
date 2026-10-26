@@ -5,7 +5,7 @@
 - Components use netfyr styling with light and dark modes. Keep SpecDoc branding
   in its deployment configuration. Do not copy application source into
   this MIT package; SpecDoc's code has a separate AGPL license.
-- Read `README.md` for the public API.
+- Read [shared principles](../principles.md) and `README.md` for the public API.
   Browser focus, input and navigation conventions take precedence over terminal
   geometry and keys. Reuse W4/W5/W6/W7/W9 for clear, relevant feedback.
 - Examples use the actual exported implementation. Keep gallery-only data and
@@ -19,5 +19,4 @@
 - The source package excludes gallery fonts and marks. The gallery build uses an
   explicit asset allowlist and retains font and mark notices.
 - Run `npm run check:web` and `npm run check:web:browser` from the repository root.
-  Inspect narrow and wide layouts in both modes; do not equate checks with a
-  representative-user or assistive-technology study.
+  Inspect narrow and wide layouts in both modes.
