@@ -40,10 +40,14 @@ function flame(label, width = 32, height = width) {
 }
 
 export async function mountFlames() {
-  for (const image of document.querySelectorAll('img[src="assets/netfyr-mark-orange.svg"]')) {
-    const svg = flame(image.alt, image.width, image.height);
-    if (image.className) svg.classList.add(...image.className.split(/\s+/));
-    image.replaceWith(svg);
+  for (const [variant, color] of Object.entries({ orange: '#FF7A1A', black: '#000000', white: '#FFFFFF' })) {
+    for (const image of document.querySelectorAll(`img[src="assets/netfyr-mark-${variant}.svg"]`)) {
+      const svg = flame(image.alt, image.width, image.height);
+      svg.style.color = color;
+      svg.querySelector('.flame-body use').setAttribute('fill', color);
+      if (image.className) svg.classList.add(...image.className.split(/\s+/));
+      image.replaceWith(svg);
+    }
   }
   for (const image of document.querySelectorAll('.logo-example img, .brand img[data-wordmark]')) {
     try {
@@ -69,7 +73,7 @@ export async function mountFlames() {
     const body = svg.querySelector('.flame-body');
     const original = body.firstElementChild;
     original.classList.add('flame-original');
-    const motion = element('path', { class: 'flame-motion-path', fill: svg.closest('.nav-link') ? 'currentColor' : '#FF7A1A', 'fill-rule': 'evenodd' });
+    const motion = element('path', { class: 'flame-motion-path', fill: svg.closest('.nav-link') ? 'currentColor' : original.getAttribute('fill') || '#FF7A1A', 'fill-rule': 'evenodd' });
     if (original.hasAttribute('transform')) motion.setAttribute('transform', original.getAttribute('transform'));
     else if (original.tagName === 'use' && original.getAttribute('href') === '#netfyr-flame') {
       const [, y] = document.querySelector('#netfyr-flame').getAttribute('viewBox').split(/\s+/).map(Number);

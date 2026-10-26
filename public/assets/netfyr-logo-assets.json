@@ -18,10 +18,20 @@
   "flame_to_wordmark_ink_gap": 32,
   "minimum_clear_space": 16,
   "files": {
+    "netfyr-logo-black.png": "eeed1eb744ed3211854465f4c029d9142043c7f565811539c3b5d6bc078e5d9d",
+    "netfyr-logo-black.svg": "2795df7182b025d41b062500ccc320c8ecdf4e847b06f7a5fa295834a9d7c0ca",
     "netfyr-logo-ink.png": "6352668e9af74c1eaa7a0d3f3fab9674d0fdc9c3ccfa7ca66dde5ffeb388f1f7",
     "netfyr-logo-ink.svg": "9fe620639e528879a8c1bc775e184a1ea7eac941a2eddbdc11dc1bec3a57cecf",
     "netfyr-logo-paper.png": "925c47aad4f73c96fdc6ca449209b0b8ab8c0bf513689d0eeb9e34b870a9180d",
-    "netfyr-logo-paper.svg": "65054a642e68e2d42bfbee6b0986cefa3cc89df344738b882e81c95f2e9cd04f"
+    "netfyr-logo-paper.svg": "65054a642e68e2d42bfbee6b0986cefa3cc89df344738b882e81c95f2e9cd04f",
+    "netfyr-logo-white.png": "4e1ead538ea5f53017fbc48b9bf8d226155342991b98371b273a0dc90f7d8e7f",
+    "netfyr-logo-white.svg": "2034e3b99ccf352123b536071459e24157b3d8bb0df11345ba8ca21b7f64194b",
+    "netfyr-mark-black.png": "781b111a799877db784665247ecfe61ab7f8943884c95b8b12c539af04a97235",
+    "netfyr-mark-black.svg": "c201c5fbb33b9b7c1846fba8d85153dedef1900aa87dd1e1bb7b4fa70a9e199d",
+    "netfyr-mark-orange.png": "285e56ce8ac686352f9e197e47b5a74a6e35d627ed85def6a55646efe66ca390",
+    "netfyr-mark-orange.svg": "61cbd5d29336295b24d751f8e52bb7b721b9c016104071b6b3445871551c912c",
+    "netfyr-mark-white.png": "263e6a5cffd4407d613b1fcba8d606c581edc149cf3fafe460deec1561829965",
+    "netfyr-mark-white.svg": "81af410990b3058bb9dcff9bf2d0ab2efc9b23095040e1458fd8cd6d73cc0cb4"
   },
   "reviewed_font_sha256": "90fe9e233a5a2ad1691ab900f4edeab762dd56f64b3738f7988137aa5964abf5",
   "font_license_amendment": "../fonts/license-amendment.json"

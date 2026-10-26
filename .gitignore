@@ -8,3 +8,13 @@ node_modules/
 __pycache__/
 *.pyc
 *.[pP][dD][fF]
+/website/
+/.cloudflare/
+/character-inventory.csv
+/netfyr-*.zip
+/netfyr-*.png
+/netfyr-mark-orange.svg
+/requirements-fonts.txt
+/scripts/build_fonts.py
+/scripts/import_release.py
+/scripts/review_glyphs.py

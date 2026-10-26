@@ -67,6 +67,9 @@ try {
   browser(['open', url.href]);
   opened = true;
   browser(['wait', '--fn', 'document.querySelector(".brand .flame-body") !== null']);
+  assert.equal(evaluate('document.querySelector(".page:not([hidden])").id'), 'page-overview');
+  assert.equal(evaluate('document.querySelector(".nav-link[aria-current=page]").getAttribute("href")'), '#overview');
+  click('.nav-link[href="#typography"]');
   const loaded = evaluate(`(async () => {
     const manifest = await (await fetch('fonts/font-manifest.json')).json();
     const results = await Promise.all(manifest.styles.map(async style => {

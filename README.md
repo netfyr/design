@@ -1,7 +1,10 @@
 # netfyr design library
 
-Fonts, colors, spacing and logo guidelines for netfyr. The site uses HTML, CSS
+Fonts, colors, spacing and logo artwork for netfyr. The site uses HTML, CSS
 and JavaScript, with all fonts and assets served locally.
+
+This directory is the canonical `netfyr/design` checkout. `website/` is the
+historical preparation copy and is not the source for site changes.
 
 ## Develop
 
@@ -24,6 +27,15 @@ npm run preview
 ```
 
 The build writes the static site to `dist/`.
+
+Overview is the home page. The Logo page has transparent SVG and PNG downloads
+of the full logo in brand colors, black and white, and the standalone flame in
+orange, black and white. PNGs are 1024 pixels wide. Rebuild the variants from
+the approved SVG artwork with Python 3 and Inkscape:
+
+```sh
+python3 scripts/build_logo_variants.py
+```
 
 To run the browser checks:
 

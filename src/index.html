@@ -11,7 +11,7 @@
     document.documentElement.dataset.theme = ['light', 'dark'].includes(initialTheme)
       ? initialTheme : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   </script>
-  <title>Typography · netfyr design library</title>
+  <title>Overview · netfyr design library</title>
   <link rel="icon" type="image/svg+xml" href="assets/netfyr-mark-orange.svg">
   <link rel="preload" href="fonts/netfyrsans-Regular.woff2?v=0.507" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/netfyrsans-SemiBold.woff2?v=0.507" as="font" type="font/woff2" crossorigin>
@@ -50,9 +50,9 @@
     <button class="icon-button mobile-close" id="close-menu" aria-label="Close navigation"><svg><use href="#i-close"/></svg></button>
     
     <nav>
-      <a class="nav-link" href="#overview"><svg><use href="#i-grid"/></svg>Overview</a>
+      <a class="nav-link active" href="#overview" aria-current="page"><svg><use href="#i-grid"/></svg>Overview</a>
       <p class="nav-label">Foundations</p>
-      <a class="nav-link active" href="#typography" aria-current="page"><svg><use href="#i-type"/></svg>Typography<span class="nav-count">02</span></a>
+      <a class="nav-link" href="#typography"><svg><use href="#i-type"/></svg>Typography</a>
       <a class="nav-link" href="#colors"><svg><use href="#i-palette"/></svg>Color palette</a>
       <a class="nav-link" href="#spacing"><svg><use href="#i-spacing"/></svg>Space &amp; scale</a>
       <p class="nav-label">Identity</p>
@@ -65,11 +65,11 @@
   <div class="workspace">
     <header class="topbar">
       <button class="icon-button mobile-menu" id="open-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><svg><use href="#i-menu"/></svg></button>
-      <div class="breadcrumb"><span>Design library</span><span class="breadcrumb-separator">/</span><span id="breadcrumb-group">Foundations</span><span class="breadcrumb-separator">/</span><strong id="breadcrumb-page">Typography</strong></div>
+      <div class="breadcrumb"><span>Design library</span><span class="breadcrumb-separator">/</span><span id="breadcrumb-group">Library</span><span class="breadcrumb-separator">/</span><strong id="breadcrumb-page">Overview</strong></div>
       <div class="topbar-actions"><button class="icon-button" id="theme-toggle" aria-label="Switch to dark theme"><svg><use href="#i-sun"/></svg></button></div>
     </header>
     <main id="main" tabindex="-1">
-      <section class="page" id="page-typography" aria-labelledby="typography-heading">
+      <section class="page" id="page-typography" aria-labelledby="typography-heading" hidden>
         <div class="page-heading"><div><div class="eyebrow"><span class="tiny-square"></span> Foundations / 01</div><h1 id="typography-heading">Typography</h1></div></div>
         <div class="type-hero">
           <div class="type-hero-copy"><h2>netfyr sans<br><span>netfyr mono</span></h2><p>Seven weights, upright and italic.</p><a href="#family-details" class="text-link">Font families <svg><use href="#i-arrow"/></svg></a></div>
@@ -111,7 +111,7 @@ white-space: pre;</code></pre><button class="icon-button copy-code" aria-label="
           <div class="weight-table"><table><thead><tr><th scope="col">Weight</th><th scope="col">netfyr sans</th><th scope="col">netfyr mono</th></tr></thead><tbody id="weight-rows"></tbody></table></div><p class="build-note">Use a supplied weight or italic file. Never synthesize bold or shear an upright to approximate an italic. These are static, unhinted fonts.</p>
         </div>
       </section>
-      <section class="page" id="page-overview" aria-labelledby="overview-heading" hidden>
+      <section class="page" id="page-overview" aria-labelledby="overview-heading">
         <div class="page-heading"><div><h1 id="overview-heading">Design library</h1></div></div>
         <div class="overview-hero"><img src="assets/netfyr-mark-orange.svg" alt="The netfyr flame" width="160" height="160"><div><span class="eyebrow">netfyr</span><h2>Fonts and identity</h2><a class="button button-accent" href="#typography">Preview fonts <svg><use href="#i-arrow"/></svg></a></div></div>
         <div class="overview-links"><a href="#typography"><span class="overview-icon">Aa</span><span><span class="eyebrow">01 / Foundations</span><h2>Typography</h2><p>Sans and Mono, each in seven weights.</p></span><svg><use href="#i-arrow"/></svg></a><a href="#colors"><span class="overview-icon color-icon"><i></i><i></i><i></i></span><span><span class="eyebrow">02 / Foundations</span><h2>Color palette</h2><p>Hex values and contrast ratios.</p></span><svg><use href="#i-arrow"/></svg></a><a href="#brand"><span class="overview-icon"><img src="assets/netfyr-mark-orange.svg" alt="" width="52" height="52"></span><span><span class="eyebrow">03 / Identity</span><h2>Logo</h2><p>Artwork, sizes and spacing.</p></span><svg><use href="#i-arrow"/></svg></a><a href="#resources"><span class="overview-icon"><svg><use href="#i-download"/></svg></span><span><span class="eyebrow">04 / Resources</span><h2>Downloads</h2><p>Fonts, artwork and design tokens.</p></span><svg><use href="#i-arrow"/></svg></a></div>
@@ -135,21 +135,28 @@ white-space: pre;</code></pre><button class="icon-button copy-code" aria-label="
       </section>
       <section class="page" id="page-brand" aria-labelledby="brand-heading" hidden>
         <div class="page-heading"><div><h1 id="brand-heading">Logo</h1></div></div>
+        <p class="brand-guidance">SVG and PNG downloads with transparent backgrounds.</p>
           <div class="logo-examples">
             <figure class="logo-example logo-on-paper"><img src="assets/netfyr-logo-ink.svg" alt="Orange flame with the ink netfyr wordmark" width="440" height="128"><figcaption><span>Light backgrounds</span><span><a href="assets/netfyr-logo-ink.svg" download>SVG</a><a href="assets/netfyr-logo-ink.png" download>PNG</a></span></figcaption></figure>
             <figure class="logo-example logo-on-ink"><img src="assets/netfyr-logo-paper.svg" alt="Orange flame with the paper netfyr wordmark" width="440" height="128"><figcaption><span>Dark backgrounds</span><span><a href="assets/netfyr-logo-paper.svg" download>SVG</a><a href="assets/netfyr-logo-paper.png" download>PNG</a></span></figcaption></figure>
+            <figure class="logo-example logo-on-white"><img src="assets/netfyr-logo-black.svg" alt="Black netfyr logo" width="440" height="128"><figcaption><span>Black</span><span><a href="assets/netfyr-logo-black.svg" download aria-label="Download black logo SVG">SVG</a><a href="assets/netfyr-logo-black.png" download aria-label="Download black logo PNG">PNG</a></span></figcaption></figure>
+            <figure class="logo-example logo-on-black"><img src="assets/netfyr-logo-white.svg" alt="White netfyr logo" width="440" height="128"><figcaption><span>White</span><span><a href="assets/netfyr-logo-white.svg" download aria-label="Download white logo SVG">SVG</a><a href="assets/netfyr-logo-white.png" download aria-label="Download white logo PNG">PNG</a></span></figcaption></figure>
           </div>
         <p class="brand-guidance">Use the supplied artwork and scale it proportionally. Minimum width: 92 px.</p>
         <div class="logo-spacing-layout"><figure class="logo-spacing"><svg viewBox="-22 -30 484 208" role="img" aria-labelledby="logo-spacing-title"><title id="logo-spacing-title">Logo spacing: 16 units of clear space and a 32-unit gap between the flame and wordmark</title><image href="assets/netfyr-logo-ink.svg" x="0" y="0" width="440" height="128"/><rect class="logo-clear-boundary" x="-2" y="-12" width="443.037" height="152.32"/><rect class="logo-ink-boundary" x="14" y="4" width="411.037" height="120.32"/><path class="logo-dimension" d="M114 -4H146M114 -8V0M146 -8V0M-2 151H14M-2 147V155M14 147V155"/><text x="130" y="-14" text-anchor="middle">2u</text><text x="6" y="168" text-anchor="middle">u</text></svg><figcaption>Clear space is measured from the visible artwork.</figcaption></figure><article><h2>Spacing</h2><p>Leave at least 16 SVG units (u) around the visible artwork. Keep the supplied 32-unit gap (2u) between the flame and wordmark.</p><p>The n aligns with the smaller flame tip; the y aligns with the bottom of the flame.</p><a class="text-link" href="assets/netfyr-logo-assets.json" download>Asset specifications <svg><use href="#i-download"/></svg></a></article></div>
         <section class="flame-icon-guidelines" aria-labelledby="flame-icon-heading">
-          <div class="section-title"><h2 id="flame-icon-heading">Flame icon</h2><a class="button button-outlined" href="assets/netfyr-mark-orange.svg" download>Download SVG <svg><use href="#i-download"/></svg></a></div>
-          <div class="mark-grid"><div class="mark-tile mark-paper"><img src="assets/netfyr-mark-orange.svg" alt="Orange netfyr flame on a light background" width="128" height="128"></div><div class="mark-tile mark-ink"><img src="assets/netfyr-mark-orange.svg" alt="Orange netfyr flame on a dark background" width="128" height="128"></div></div>
-          <p class="brand-guidance">Use the flame upright and orange, with a transparent interior. Minimum size: 16 px; prefer 24 px or larger. Leave clear space of at least one eighth of its SVG viewport.</p>
+          <div class="section-title"><h2 id="flame-icon-heading">Flame icon</h2></div>
+          <div class="mark-grid mark-downloads">
+            <figure class="asset-example mark-tile logo-on-paper"><img src="assets/netfyr-mark-orange.svg" alt="Orange netfyr flame" width="128" height="128"><figcaption><span>Orange</span><span><a href="assets/netfyr-mark-orange.svg" download aria-label="Download orange flame SVG">SVG</a><a href="assets/netfyr-mark-orange.png" download aria-label="Download orange flame PNG">PNG</a></span></figcaption></figure>
+            <figure class="asset-example mark-tile logo-on-white"><img src="assets/netfyr-mark-black.svg" alt="Black netfyr flame" width="128" height="128"><figcaption><span>Black</span><span><a href="assets/netfyr-mark-black.svg" download aria-label="Download black flame SVG">SVG</a><a href="assets/netfyr-mark-black.png" download aria-label="Download black flame PNG">PNG</a></span></figcaption></figure>
+            <figure class="asset-example mark-tile logo-on-black"><img src="assets/netfyr-mark-white.svg" alt="White netfyr flame" width="128" height="128"><figcaption><span>White</span><span><a href="assets/netfyr-mark-white.svg" download aria-label="Download white flame SVG">SVG</a><a href="assets/netfyr-mark-white.png" download aria-label="Download white flame PNG">PNG</a></span></figcaption></figure>
+          </div>
+          <p class="brand-guidance">Keep the flame upright with a transparent interior. Minimum size: 16 px; prefer 24 px or larger. Leave clear space of at least one eighth of its SVG viewport.</p>
         </section>
       </section>
       <section class="page" id="page-resources" aria-labelledby="resources-heading" hidden>
         <div class="page-heading"><div><div class="eyebrow"><span class="tiny-square"></span> Resources / Downloads</div><h1 id="resources-heading">Downloads</h1></div></div>
-        <div class="resource-list"><a href="fonts/netfyr-fonts-0.507.zip" download><span class="resource-format">ZIP</span><div><h2>Fonts <span class="resource-version">0.507</span></h2><p>28 styles in TTF and WOFF2, with CSS.</p></div><svg><use href="#i-download"/></svg></a><a href="assets/netfyr-mark-orange.svg" download><span class="resource-format">SVG</span><div><h2>Flame icon</h2><p>Orange artwork with a transparent background.</p></div><svg><use href="#i-download"/></svg></a><a href="assets/netfyr-tokens.json" download><span class="resource-format">JSON</span><div><h2>Design tokens</h2><p>Colors, spacing and type sizes.</p></div><svg><use href="#i-download"/></svg></a><a href="documents/character-inventory.csv?v=0.507" download><span class="resource-format">CSV</span><div><h2>Character inventory <span class="resource-version">0.507</span></h2><p>62,300 character and style mappings, with metrics and Unicode names.</p></div><svg><use href="#i-download"/></svg></a></div>
+        <div class="resource-list"><a href="fonts/netfyr-fonts-0.507.zip" download><span class="resource-format">ZIP</span><div><h2>Fonts</h2><p>28 styles in TTF and WOFF2, with CSS.</p></div><svg><use href="#i-download"/></svg></a><a href="assets/netfyr-mark-orange.svg" download><span class="resource-format">SVG</span><div><h2>Flame icon</h2><p>Orange artwork with a transparent background.</p></div><svg><use href="#i-download"/></svg></a><a href="assets/netfyr-tokens.json" download><span class="resource-format">JSON</span><div><h2>Design tokens</h2><p>Colors, spacing and type sizes.</p></div><svg><use href="#i-download"/></svg></a><a href="documents/character-inventory.csv?v=0.507" download><span class="resource-format">CSV</span><div><h2>Character inventory</h2><p>62,300 character and style mappings, with metrics and Unicode names.</p></div><svg><use href="#i-download"/></svg></a></div>
         <p class="build-note">Fonts: <a href="fonts/OFL.txt" target="_blank" rel="noopener">SIL OFL 1.1</a>. <a href="documents/NOTICE.txt" target="_blank" rel="noopener">Logo rights reserved</a>.</p>
       </section>
       <footer class="page-footer"><span><img src="assets/netfyr-mark-orange.svg" alt="" width="18" height="18"> netfyr design library</span><a href="#resources">Assets &amp; resources <svg><use href="#i-arrow"/></svg></a></footer>

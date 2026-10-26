@@ -15,12 +15,25 @@ url.hash = 'brand';
 try {
   browser(['open', url.href]);
   browser(['set', 'media', 'light']);
+  browser(['wait', '--fn', 'document.querySelector(".brand .flame-original") !== null']);
   const result = browser(['eval', '--stdin'], `
     (async () => {
       const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-      for (let tries = 0; !document.querySelector('.brand .flame-body') && tries < 50; tries++) await wait(20);
       await document.fonts.ready;
-      const targets = [...document.querySelectorAll('.brand, .mark-tile, .logo-example')];
+      const marks = [...document.querySelectorAll('.mark-downloads > figure')];
+      const expectedColors = new Map();
+      for (const mark of marks) {
+        const download = mark.querySelector('a[download][href$=".svg"]');
+        const response = await fetch(download.href);
+        if (!response.ok) throw new Error('Flame download failed: ' + download.href);
+        const artwork = new DOMParser().parseFromString(await response.text(), 'image/svg+xml');
+        const sample = document.createElement('span');
+        sample.style.color = artwork.querySelector('path').getAttribute('fill');
+        document.body.append(sample);
+        expectedColors.set(mark, getComputedStyle(sample).color);
+        sample.remove();
+      }
+      const targets = [...document.querySelectorAll('.brand, .mark-tile, .logo-example, .mark-downloads > figure')];
       const failures = [], samples = [];
       const layoutProperties = ['display', 'position', 'width', 'height', 'boxSizing', 'padding', 'margin', 'border', 'flexShrink', 'alignSelf'];
       function layout(node) {
@@ -29,7 +42,8 @@ try {
           styles: layoutProperties.map(property => style[property]) });
       }
       for (const [index, target] of targets.entries()) {
-        const svg = target.querySelector('.flame-svg'), original = svg.querySelector('.flame-original');
+        const svg = target.querySelector('.flame-svg'), original = svg?.querySelector('.flame-original');
+        if (!original) { failures.push(index + ':missing-animation'); continue; }
         const baseline = [target, svg].map(layout);
         const attributes = original.outerHTML;
         const display = getComputedStyle(original).display;
@@ -41,12 +55,21 @@ try {
           if (original.outerHTML !== attributes || getComputedStyle(original).display !== display || getComputedStyle(original).transform !== transform) failures.push(index + ':' + state + ':artwork');
           if (original.getBBox().width === 0 || original.getBBox().height === 0) failures.push(index + ':' + state + ':collapsed');
           if (wordmark && layout(wordmark) !== wordmarkLayout) failures.push(index + ':' + state + ':wordmark');
+          const color = expectedColors.get(target);
+          if (color) {
+            const originalColor = original.tagName === 'use' ? getComputedStyle(original).color : getComputedStyle(original).fill;
+            if (originalColor !== color) failures.push(index + ':' + state + ':original-color');
+            if ([...svg.querySelectorAll('.flame-blur path')].some(path => getComputedStyle(path).fill !== color)) {
+              failures.push(index + ':' + state + ':animation-color');
+            }
+          }
           for (const blur of svg.querySelectorAll('feGaussianBlur')) {
             const strength = parseFloat(blur.getAttribute('stdDeviation'));
             if (!Number.isFinite(strength) || strength < 0 || strength > 2.4) failures.push(index + ':' + state + ':blur');
           }
         }
         target.dispatchEvent(new PointerEvent('pointerenter'));
+        if (!svg.classList.contains('is-burning')) failures.push(index + ':hover:inactive');
         const nativeBounds = original.getBoundingClientRect();
         const animationBounds = svg.querySelector('.flame-blur').getBoundingClientRect();
         if (['x', 'y', 'width', 'height'].some(property => Math.abs(nativeBounds[property] - animationBounds[property]) > .01)) failures.push(index + ':entry:coordinate-offset');
@@ -63,25 +86,31 @@ try {
         if (!svg.classList.contains('is-burning')) failures.push(index + ':focus:inactive');
         target.blur(); target.dispatchEvent(new PointerEvent('pointerleave')); await wait(300); check('blur');
       }
-      return { failures, targets: targets.length, regionalBlur: samples.some(values => Math.max(...values) > Math.min(...values) + .1) };
+      return { failures, targets: targets.length, marks: marks.map(mark => mark.querySelector('a[download][href$=".svg"]').getAttribute('href')),
+        regionalBlur: samples.some(values => Math.max(...values) > Math.min(...values) + .1) };
     })()
   `).result;
   assert.ok(result.targets >= 5, 'Flame examples did not mount');
+  assert.deepEqual(result.marks.sort(), ['black', 'orange', 'white'].map(color => 'assets/netfyr-mark-' + color + '.svg'));
   assert.deepEqual(result.failures, []);
   assert.equal(result.regionalBlur, true, 'Blur must respond independently by region');
   browser(['set', 'media', 'light', 'reduced-motion']);
   const reduced = browser(['eval', '--stdin'], `
     (async () => {
-      const target = document.querySelector('.mark-tile'); target.focus();
-      target.dispatchEvent(new PointerEvent('pointerenter'));
-      await new Promise(resolve => setTimeout(resolve, 100));
-      return matchMedia('(prefers-reduced-motion: reduce)').matches &&
-        document.querySelectorAll('.is-burning').length === 0 &&
-        [...document.querySelectorAll('feGaussianBlur')].every(node => parseFloat(node.getAttribute('stdDeviation')) === 0);
+      for (const target of document.querySelectorAll('.mark-downloads > figure')) {
+        target.focus();
+        target.dispatchEvent(new PointerEvent('pointerenter'));
+        await new Promise(resolve => setTimeout(resolve, 100));
+        if (document.querySelectorAll('.is-burning').length !== 0 ||
+          [...document.querySelectorAll('feGaussianBlur')].some(node => parseFloat(node.getAttribute('stdDeviation')) !== 0)) return false;
+        target.blur();
+        target.dispatchEvent(new PointerEvent('pointerleave'));
+      }
+      return matchMedia('(prefers-reduced-motion: reduce)').matches;
     })()
   `).result;
   assert.equal(reduced, true, 'Reduced motion must keep the original mark sharp');
-  console.log('Flame layout, artwork, wordmark, regional blur, reentry and reduced motion pass.');
+  console.log('Flame variants, colors, layout, artwork, wordmark, regional blur, hover, focus and reduced motion pass.');
 } finally {
   browser(['close']);
 }

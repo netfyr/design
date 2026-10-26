@@ -51,7 +51,7 @@ function route(initial = false) {
     $('#family-details').scrollIntoView({ block: 'start' });
     return;
   }
-  const page = Object.hasOwn(pages, target) ? target : 'typography';
+  const page = Object.hasOwn(pages, target) ? target : 'overview';
   const changed = activePage !== page;
   showPage(page);
   if (page === 'typography' && ['playground', 'glyphs', 'usage'].includes(tab)) selectTab(tab);
