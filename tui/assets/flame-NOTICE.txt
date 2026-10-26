@@ -1,0 +1,32 @@
+The ASCII artwork in flame.txt is sampled from the netfyr design library's
+original flame and its SVG animation. It is a terminal rendering of the mark,
+not a replacement master. The netfyr name and standalone mark remain all rights
+reserved; this repository's MIT software license does not license the mark.
+
+Source files and their SHA-256 hashes are recorded in flame-provenance.json.
+Regenerate from the netfyr-design repository root:
+  node tui/scripts/generate-flame.mjs
+Verify the generated assets:
+  node tui/scripts/generate-flame.mjs --check
+
+The source website animation code is licensed under the MIT License:
+
+Copyright (c) 2026 The netfyr authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

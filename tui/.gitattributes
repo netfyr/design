@@ -1,0 +1,2 @@
+# Padded rows are part of the 24x12 flame frames.
+assets/flame.txt whitespace=-blank-at-eol,-blank-at-eof

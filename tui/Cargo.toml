@@ -1,0 +1,14 @@
+[package]
+name = "netfyr-tui-design"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Shared terminal components and design reference for netfyr"
+
+[dependencies]
+# The application already uses Ratatui; shared widgets use its cell and style model.
+ratatui = { version = "0.30.2", default-features = false }
+
+[dev-dependencies]
+# The gallery needs terminal input; exported widgets remain backend-independent.
+ratatui = { version = "0.30.2", default-features = false, features = ["crossterm_0_29"] }

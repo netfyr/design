@@ -1,10 +1,35 @@
 # netfyr design library
 
-Fonts, colors, spacing and logo artwork for netfyr. The site uses HTML, CSS
-and JavaScript, with all fonts and assets served locally.
+Fonts, colors, spacing, logo artwork and shared terminal components for netfyr.
+The brand site uses HTML, CSS and JavaScript, with fonts and assets served locally.
 
-This directory is the canonical `netfyr/design` checkout. `website/` is the
-historical preparation copy and is not the source for site changes.
+## Source and components
+
+This directory is the `netfyr/design` Git checkout. The old
+`.build/github/design` path links here; `website/` is a historical preparation
+copy and is not the source for site changes.
+
+| Content | Location |
+| --- | --- |
+| Brand site and downloads | `src/` and `public/` |
+| Shared TUI widgets, contracts and interactive gallery | [tui/](tui/README.md) |
+| Font sources and review records | [font-sources/0.507/](font-sources/0.507/README.md) |
+
+The TUI application imports `netfyr-tui-design` from `tui/`. Run its tests and
+gallery from this repository:
+
+```sh
+cargo test --locked --manifest-path tui/Cargo.toml --all-targets
+cargo run --locked --manifest-path tui/Cargo.toml --example gallery
+```
+
+The gallery previews shared dropdowns, setting rows, footers and animations with
+offline fixtures. It requires a terminal; append `-- --snapshot` for text output
+or `-- --fixture flame` to open an example directly.
+
+TUI documents link to sibling `netfyr-tui/` and `specs/` checkouts for application
+code and cross-project requirements. The website build excludes these developer
+references and the TUI source.
 
 ## Develop
 
@@ -56,11 +81,12 @@ netfyr Sans and Mono 0.507 each have seven weights, upright and italic:
 [font source README](font-sources/0.507/README.md) for review records and rebuild
 instructions. Rebuilding requires the original reference archive.
 
-Fonts and font source code use SIL OFL 1.1; website code uses MIT. All rights
+Fonts and font source code use SIL OFL 1.1; website and TUI code use MIT. All rights
 reserved for standalone flame, logo and wordmark artwork. See
 [LICENSES.md](LICENSES.md) for details and third-party notices.
 
 ## GitHub Pages
 
 The [Pages workflow](.github/workflows/pages.yml) checks and deploys `main`
-to `design.netfyr.io`. Pull requests run the same checks.
+to `design.netfyr.io`. The [TUI workflow](.github/workflows/tui.yml) checks
+terminal component changes on pull requests and pushes to `main`.

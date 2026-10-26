@@ -1,0 +1,33 @@
+name: Check terminal components
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tui/**'
+      - 'web/tui/previews.json'
+      - '.github/workflows/tui.yml'
+  pull_request:
+    paths:
+      - 'tui/**'
+      - 'web/tui/previews.json'
+      - '.github/workflows/tui.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+      - run: cargo +stable fmt --manifest-path tui/Cargo.toml --all -- --check
+      - run: cargo +stable test --locked --manifest-path tui/Cargo.toml --all-targets
+      - run: cargo +stable clippy --locked --manifest-path tui/Cargo.toml --all-targets -- -D warnings
+      - run: cargo +stable run --locked --manifest-path tui/Cargo.toml --example gallery -- --snapshot
+      - name: Check browser preview frames
+        run: |
+          cargo +stable run --locked --manifest-path tui/Cargo.toml --example gallery -- --export-previews > /tmp/netfyr-tui-previews.json
+          cmp web/tui/previews.json /tmp/netfyr-tui-previews.json

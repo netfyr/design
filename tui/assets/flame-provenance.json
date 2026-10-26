@@ -1,0 +1,34 @@
+{
+  "source": "netfyr-design",
+  "files": {
+    "src/flame-shape.js": {
+      "sha256": "aeb96360c0f30e1cf2435dfd0683ac2adb51bc3d703c48258014b5af23d3f27d"
+    },
+    "src/flame.js": {
+      "sha256": "1e62ce5b476f6e1c845f618192bfb413de4663392c2e1539384579dbb566d8ed"
+    },
+    "src/styles.css": {
+      "sha256": "16b58d446d04d662a460a2541b2643ae805d394c4ea5b2ef7be044115e22fb7c"
+    },
+    "public/assets/netfyr-mark-orange.svg": {
+      "sha256": "61cbd5d29336295b24d751f8e52bb7b721b9c016104071b6b3445871551c912c"
+    }
+  },
+  "width": 24,
+  "height": 12,
+  "frameCount": 12,
+  "durationSeconds": 1.15,
+  "viewport": {
+    "x": -16,
+    "y": -18,
+    "width": 160,
+    "height": 160
+  },
+  "origin": [
+    64,
+    117.2
+  ],
+  "samplesPerAxis": 8,
+  "asciiRamp": " .:+*#@",
+  "notes": "First frame is the exact master at rest. Remaining frames sample one full-strength animation cycle. Even/odd fill preserves the hollow interior. Terminal cells assume a 1:2 width-to-height ratio. The viewport preserves at least 16 SVG units around the resting mark. SVG motion blur is omitted."
+}
