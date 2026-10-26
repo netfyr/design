@@ -2,6 +2,9 @@
 
 - Website software and build scripts outside `font-sources/`: MIT, in `LICENSE`.
 - Shared terminal components and their documentation under `tui/`: MIT, in `tui/LICENSE`.
+- Web components and their gallery under `web/`: MIT, in `web/LICENSE`, except
+  vendored Highlight.js under `web/src/vendor/highlightjs/`: BSD-3-Clause,
+  in that directory's `LICENSE`.
 - netfyr Sans, Mono and Symbols fonts, including their glyphs, and the font source
   code under `font-sources/0.507/sources/` and `font-sources/symbols/`: SIL Open Font
   License 1.1, in `OFL.txt`.

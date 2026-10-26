@@ -134,6 +134,7 @@ document.addEventListener('keydown', event => {
   if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
   if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
 });
+document.documentElement.classList.add('has-navigation');
 setMenu(false);
 
 function selectTab(name) {

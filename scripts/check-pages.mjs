@@ -4,15 +4,104 @@ import { createHash } from 'node:crypto';
 import { readdir, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { artifactFiles } from '../web/scripts/build.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const session = `netfyr-pages-${process.pid}`;
-function browser(args, input) {
-  const response = JSON.parse(execFileSync('agent-browser', ['--session', session, '--json', ...args], {
+function browser(args, input, name = session) {
+  const response = JSON.parse(execFileSync('agent-browser', ['--session', name, '--json', ...args], {
     input, encoding: 'utf8', timeout: 30000,
   }));
   assert.equal(response.success, true, response.error);
   return response.data;
+}
+
+async function checkComponents(url) {
+  const components = new URL('components/', url);
+  const tui = new URL('tui/', components);
+  for (const file of artifactFiles) {
+    assert.deepEqual(await readFile(path.join(root, 'dist/components', file)),
+      await readFile(path.join(root, 'web/dist', file)), `Changed component artifact: ${file}`);
+  }
+  for (const route of ['components', 'components/tui']) {
+    const response = await fetch(new URL(`${route}?preview=1`, url), { redirect: 'manual' });
+    assert.equal(response.status, 308, `Missing directory redirect: ${route}`);
+    assert.equal(response.headers.get('location'), `${url.pathname}${route}/?preview=1`);
+  }
+  for (const [file, type] of [
+    ['downloads/netfyr-web-components-0.1.0.tgz', 'application/gzip'],
+    ['tui/screenshots/settings.gif', 'image/gif'],
+    ['assets/fonts/netfyrsymbols-Regular.woff2', 'font/woff2'],
+    ['tui/previews.json', 'application/json'],
+  ]) {
+    const response = await fetch(new URL(file, components), { method: 'HEAD' });
+    assert.equal(response.status, 200, `Missing integrated asset: ${file}`);
+    assert.ok(response.headers.get('content-type').startsWith(type), `Incorrect MIME type: ${file}`);
+  }
+  for (const file of ['package.json', 'scripts/build.mjs', '../.git/config', 'missing/']) {
+    assert.equal((await fetch(new URL(file, components))).status, 404, `Unexpected published path: ${file}`);
+  }
+
+  browser(['set', 'viewport', '1440', '1000']);
+  if (evaluate('document.documentElement.dataset.theme') !== 'dark') click('#theme-toggle');
+  click('.nav-link[href="components/"]');
+  browser(['wait', '--fn', `location.pathname === ${JSON.stringify(components.pathname)} && document.documentElement.dataset.galleryReady === 'true'`]);
+  assert.equal(evaluate('document.body.dataset.uiMode'), 'dark', 'Theme lost from brand to Web');
+  assert.equal(evaluate('document.querySelector(".gallery-site-links [aria-current=page]").dataset.surface'), 'web');
+  assert.equal(evaluate('document.querySelector(".gallery-brand .ui-brand-subtitle").textContent'), 'design library');
+  assert.deepEqual(evaluate(`([...document.querySelectorAll('.gallery-site-links [data-design-page]')]
+    .map(link => [link.dataset.designPage, new URL(link.href).pathname]))`),
+  ['overview', 'typography', 'colors', 'spacing', 'brand', 'resources'].map(page => [page, url.pathname]));
+  click('.gallery-component-links a[href="#codebox"]');
+  browser(['wait', '--fn', 'document.querySelector(".gallery-component-links [aria-current=location]").hash === "#codebox"']);
+  click('.gallery-site-links [data-surface="tui"]');
+  browser(['wait', '--fn', `location.pathname === ${JSON.stringify(tui.pathname)} && document.documentElement.dataset.galleryReady === 'true'`]);
+  assert.equal(evaluate('document.body.dataset.uiMode'), 'dark', 'Theme lost from Web to TUI');
+  assert.equal(evaluate('document.querySelector(".gallery-site-links [aria-current=page]").dataset.surface'), 'tui');
+  browser(['wait', '--fn', 'document.querySelector("[data-tui-preview=activity] svg text") !== null']);
+  click('#gallery-theme-toggle');
+  click('.gallery-site-links [data-design-page="typography"]');
+  browser(['wait', '--fn', '!document.querySelector("#page-typography")?.hidden && document.documentElement.classList.contains("has-navigation")']);
+  assert.equal(evaluate('document.documentElement.dataset.theme'), 'light', 'Theme lost from TUI to brand');
+  assert.equal(evaluate('location.hash'), '#typography');
+
+  browser(['set', 'viewport', '320', '740']);
+  browser(['focus', '#open-menu']);
+  browser(['press', 'Enter']);
+  click('.nav-link[href="components/"]');
+  browser(['wait', '--fn', 'document.documentElement.dataset.galleryReady === "true"']);
+  assert.ok(evaluate('document.querySelector("#gallery-sidebar").inert'));
+  browser(['focus', '#gallery-open-menu']);
+  browser(['press', 'Enter']);
+  click('.gallery-site-links [data-surface="tui"]');
+  browser(['wait', '--fn', `location.pathname === ${JSON.stringify(tui.pathname)} && document.documentElement.dataset.galleryReady === 'true'`]);
+  assert.ok(evaluate('document.querySelector("#gallery-sidebar").inert'));
+  assert.ok(evaluate('document.documentElement.scrollWidth <= innerWidth'));
+  browser(['focus', '#gallery-open-menu']);
+  browser(['press', 'Enter']);
+  browser(['press', 'Escape']);
+  assert.equal(evaluate('document.activeElement.id'), 'gallery-open-menu');
+  browser(['press', 'Enter']);
+  click('.gallery-brand');
+  browser(['wait', '--fn', 'document.documentElement.classList.contains("has-navigation") && !document.querySelector("#page-overview").hidden']);
+  assert.equal(evaluate('document.documentElement.dataset.theme'), 'light');
+  assert.ok(evaluate('document.documentElement.scrollWidth <= innerWidth'));
+
+  const staticSession = `${session}-static`;
+  try {
+    browser(['--args', '--blink-settings=scriptEnabled=false', 'open', url.href], undefined, staticSession);
+    browser(['set', 'viewport', '375', '812'], undefined, staticSession);
+    browser(['set', 'media', 'dark'], undefined, staticSession);
+    for (const selector of ['.nav-link[href="components/"]', '.gallery-site-links [data-surface="tui"]', '.gallery-brand']) {
+      assert.equal(browser(['eval', '--stdin'], `document.documentElement.classList.contains('has-navigation') || document.documentElement.dataset.galleryReady === 'true'`, staticSession).result, false);
+      browser(['click', selector], undefined, staticSession);
+    }
+    assert.equal(browser(['eval', 'location.pathname + location.hash'], undefined, staticSession).result,
+      `${url.pathname}#overview`, 'Static navigation did not return to Overview');
+  } finally {
+    browser(['close'], undefined, staticSession);
+  }
+  console.log('Integrated brand, Web and TUI navigation, theme continuity, mobile keyboard access, static navigation and downloads pass under /design/.');
 }
 function evaluate(source) { return browser(['eval', '--stdin'], source).result; }
 function click(selector) {
@@ -240,6 +329,7 @@ try {
     assert.equal(layout.menuClosed, true);
   }
   console.log('Production /design/ preview: 28 font faces, glyph search, controls, copy, theme and six mobile pages pass.');
+  await checkComponents(url);
   execFileSync(process.execPath, ['scripts/check-flame-browser.mjs', url.href], {
     cwd: root, stdio: 'inherit', timeout: 60000,
   });

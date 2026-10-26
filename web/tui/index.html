@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Shared Ratatui components, animations, and terminal gallery examples.">
+  <title>TUI components · netfyr design library</title>
+  <link rel="icon" href="../assets/netfyr-mark-orange.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../src/components.css">
+  <link rel="stylesheet" href="../src/theme.css">
+  <link rel="stylesheet" href="../gallery.css">
+</head>
+<body class="ui" data-ui-theme>
+  <script>
+    {
+      let mode;
+      try { mode = localStorage.getItem('netfyr-theme'); } catch {}
+      document.body.dataset.uiMode = ['light', 'dark'].includes(mode)
+        ? mode : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+  </script>
+  <a class="gallery-skip" href="#main">Skip to components</a>
+  <svg class="gallery-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="gallery-i-selection" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="gallery-i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="gallery-i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="gallery-i-tabs" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 3 8M3 4v7h7M12 7v5l3 2"/></symbol>
+    <symbol id="gallery-i-forms" viewBox="0 0 24 24"><path d="M3 7h18M3 17h18"/><circle cx="8" cy="7" r="3"/><circle cx="16" cy="17" r="3"/></symbol>
+    <symbol id="gallery-i-tables" viewBox="0 0 24 24"><path d="M4 7h16m-5-5 5 5-5 5M20 17H4m5-5-5 5 5 5"/></symbol>
+    <symbol id="gallery-i-feedback" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 1-9 9"/><path d="M3 6v6h6"/></symbol>
+    <symbol id="gallery-i-footer" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15h18m-14 3h4m6 0h2"/></symbol>
+    <symbol id="gallery-i-typography" viewBox="0 0 24 24"><path d="M4 8V5h16v3M12 5v14m-4 0h8"/></symbol>
+    <symbol id="gallery-site-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="gallery-site-type" viewBox="0 0 24 24"><path d="m3 19 6-14 6 14M5 14h8m3-2c5-3 7 0 4 2-6 0-4 6 0 3m0-6v7"/></symbol>
+    <symbol id="gallery-site-palette" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="8" r="4"/><circle cx="8" cy="16" r="4"/><circle cx="16" cy="16" r="4"/></symbol>
+    <symbol id="gallery-site-spacing" viewBox="0 0 24 24"><path d="M4 4v16M20 4v16M7 12h10m-7-3-3 3 3 3m4-6 3 3-3 3"/></symbol>
+    <symbol id="gallery-site-folder" viewBox="0 0 24 24"><path d="M3 7V4h6l3 3h9v13H3Z"/></symbol>
+    <symbol id="gallery-site-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+    <symbol id="gallery-site-tui" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+    <symbol id="gallery-site-logo" viewBox="0 2 128 128"><path fill="currentColor" stroke="none" d="M90 12a6 6 0 0 0-10.24264-4.24264L15.75736 71.75736A6 6 0 0 0 14 76a50 50 0 0 0 100 0V52a6 6 0 0 0-10.24264-4.24264L90 61.51472ZM78 26.48528V76a6 6 0 0 0 10.24264 4.24264L102 66.48528V76A38 38 0 0 1 26.07643 78.40885Z"/></symbol>
+  </svg>
+  <div class="gallery-backdrop" id="gallery-backdrop" hidden></div>
+  <aside class="ui-navigation gallery-sidebar" id="gallery-sidebar" aria-label="Design library navigation">
+    <a class="ui-brand gallery-brand" href="../../#overview" data-design-page="overview" aria-label="netfyr design library home"><svg class="ui-brand-logo" viewBox="0 0 440 128" width="440" height="128" aria-hidden="true"><g class="ui-brand-mark"><path fill="#FF7A1A" transform="translate(0 -2)" d="M90 12a6 6 0 0 0-10.24264-4.24264L15.75736 71.75736A6 6 0 0 0 14 76a50 50 0 0 0 100 0V52a6 6 0 0 0-10.24264-4.24264L90 61.51472ZM78 26.48528V76a6 6 0 0 0 10.24264 4.24264L102 66.48528V76A38 38 0 0 1 26.07643 78.40885Z"/></g><path fill="currentColor" transform="translate(140.010695 100.470588) scale(0.106951872 -0.106951872)" d="M56 0V338V520H166V504Q192 514 220 520Q241 524 266 526Q291 528 316 528Q342 528 368 525Q394 522 416 516Q438 510 461 500Q483 489 499 477Q516 464 531 446Q546 427 555 408Q564 390 569 367Q574 343 574 319V0H464V319Q464 336 462 347Q459 358 454 370Q449 381 444 388Q438 394 429 401Q419 408 409 413Q399 417 384 421Q369 425 353 427Q337 429 316 429Q294 429 277 428Q259 426 243 423Q228 420 218 417Q207 413 198 407Q189 401 185 397Q180 392 175 383Q170 374 168 364Q166 354 166 338V0ZM920 -8Q891 -8 862 -4Q833 0 809 8Q785 16 762 30Q738 44 721 61Q704 78 691 101Q677 124 669 148Q662 172 658 201Q654 229 654 260Q654 290 658 319Q661 347 669 371Q676 395 690 418Q703 441 719 458Q735 475 759 490Q782 504 807 512Q831 520 860 524Q889 528 919 528Q946 528 974 524Q1002 520 1025 513Q1048 505 1071 492Q1094 478 1111 461Q1127 445 1141 423Q1155 400 1164 376Q1171 353 1176 324Q1180 295 1180 265Q1180 251 1173 240Q1165 229 1153 222Q1140 215 1125 215H766Q769 194 775 175Q781 158 787 148Q793 137 803 127Q813 117 823 112Q832 106 847 101Q863 96 880 94Q897 91 920 91Q952 91 975 94Q997 97 1017 104Q1036 110 1049 118Q1061 126 1074 139L1156 73Q1137 54 1111 38Q1085 21 1056 11Q1028 2 993 -3Q958 -8 920 -8ZM768 307H1066Q1064 327 1058 344Q1053 362 1047 374Q1040 386 1030 397Q1020 408 1011 414Q1001 420 987 425Q971 431 956 434Q940 436 919 436Q895 436 878 434Q861 431 845 425Q830 419 821 413Q811 407 802 396Q792 384 786 372Q780 360 775 341Q770 325 768 307ZM1432 0Q1420 0 1407 1Q1393 2 1382 4Q1369 7 1355 13Q1340 19 1329 26Q1319 34 1309 48Q1299 61 1294 74Q1290 85 1288 101Q1285 116 1285 132V421H1229V520H1285V656H1395V520H1485V421H1395V132Q1395 121 1396 116Q1397 110 1398 106L1399 103H1400L1401 102L1406 101Q1415 99 1432 99H1481V0ZM1576 0V421H1525V520H1576V556Q1576 578 1579 598Q1582 618 1587 632Q1593 649 1605 665Q1616 681 1629 690Q1641 700 1659 707Q1677 713 1692 716Q1706 718 1723 719Q1739 720 1754 720H1781V621H1754Q1741 621 1731 621Q1721 620 1713 619Q1705 617 1704 617Q1702 616 1699 614Q1695 611 1695 610Q1694 609 1692 602Q1689 594 1688 584Q1686 573 1686 556V520H1763V421H1686V0ZM1812 -220V-130H1867Q1884 -130 1895 -129Q1905 -128 1911 -125Q1917 -123 1921 -117Q1924 -111 1928 -101Q1931 -92 1937 -78L2000 72L1809 520H1922L2056 205L2188 520H2301L2041 -100Q2026 -134 2003 -161Q1979 -188 1946 -204Q1912 -220 1867 -220ZM2373 0V520H2483V424Q2492 464 2507 487Q2522 509 2544 519Q2565 528 2594 528Q2613 528 2630 525Q2647 522 2665 516V415Q2634 429 2597 429Q2574 429 2554 423Q2533 417 2517 405Q2501 393 2492 374Q2483 355 2483 329V0Z"/></svg><span class="ui-brand-subtitle">design library</span></a>
+    <button class="gallery-icon-button gallery-close-menu" id="gallery-close-menu" type="button" aria-label="Close navigation"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-close"/></svg></button>
+    <nav class="ui-nav-links gallery-site-links" aria-label="Design library">
+      <a href="../../#overview" data-design-page="overview"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-grid"/></svg><span>Overview</span></a>
+      <p class="ui-nav-label">Foundations</p>
+      <a href="../../#typography" data-design-page="typography"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-type"/></svg><span>Typography</span></a>
+      <a href="../../#colors" data-design-page="colors"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-palette"/></svg><span>Color palette</span></a>
+      <a href="../../#spacing" data-design-page="spacing"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-spacing"/></svg><span>Space &amp; scale</span></a>
+      <p class="ui-nav-label">Identity</p>
+      <a href="../../#brand" data-design-page="brand"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-logo"/></svg><span>Logo</span></a>
+      <a href="../../#resources" data-design-page="resources"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-folder"/></svg><span>Resources</span></a>
+      <p class="ui-nav-label">Components</p>
+      <a data-surface="web" href="../"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-web"/></svg><span>Web components</span></a>
+      <a data-surface="tui" href="./" aria-current="page"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-tui"/></svg><span>TUI components</span></a>
+    </nav>
+    <nav class="ui-nav-links gallery-component-links" aria-label="TUI components">
+      <p class="ui-nav-label">On this page</p>
+      <a href="#footer" aria-current="location"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-footer"/></svg><span>Action footer</span></a>
+      <a href="#activity"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-feedback"/></svg><span>Activity indicators</span></a>
+      <a href="#dropdown"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-selection"/></svg><span>Dropdown</span></a>
+      <a href="#flame"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-logo"/></svg><span>Flame</span></a>
+      <a href="#glyphs"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-typography"/></svg><span>Glyphs</span></a>
+      <a href="#settings"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-forms"/></svg><span>Settings row</span></a>
+      <a href="#replay"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-tabs"/></svg><span>Trace replay</span></a>
+      <a href="#traffic"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-tables"/></svg><span>Traffic lanes</span></a>
+    </nav>
+    <div class="gallery-sidebar-footer"><hr class="ui-nav-divider"><a href="https://github.com/netfyr/design">Source repository <span aria-hidden="true">↗</span></a></div>
+  </aside>
+  <div class="gallery-workspace">
+    <header class="gallery-topbar">
+      <button class="gallery-icon-button gallery-open-menu" id="gallery-open-menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="gallery-sidebar"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-menu"/></svg></button>
+      <div class="gallery-breadcrumb"><a href="../../#overview" data-design-page="overview">Design library</a><span aria-hidden="true">/</span><span>TUI</span><span aria-hidden="true">/</span><strong id="gallery-current-component">Action footer</strong></div>
+      <button class="ui-theme-toggle" id="gallery-theme-toggle" type="button" data-ui-theme-toggle aria-label="Switch to dark theme" hidden>
+        <svg data-ui-theme-icon="light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg data-ui-theme-icon="dark" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z"/></svg>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="gallery-intro">
+        <div><p class="gallery-eyebrow">Design library</p><h1>TUI components</h1><p>Shared Rust components for Ratatui.</p></div>
+      </div>
+      <details class="gallery-setup ui-disclosure" id="tui-run-gallery">
+        <summary>Run the interactive gallery</summary>
+        <p>From the design repository root:</p>
+        <div class="ui-codebox" data-ui-codebox data-ui-language="bash">
+          <div class="ui-codebox-header"><span>Terminal</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+          <pre class="ui-code" tabindex="0" role="region" aria-label="Run the TUI gallery"><code id="tui-gallery-command">cargo run --locked --manifest-path tui/Cargo.toml --example gallery</code></pre>
+          <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+        </div>
+        <p>Choose an example with the arrow keys and Enter. Space pauses animations; Esc returns to the examples. Ctrl+C quits.</p>
+      </details>
+
+      <section class="gallery-component" id="footer" aria-labelledby="footer-heading">
+        <div class="gallery-section-heading"><h2 id="footer-heading">Action footer</h2></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="footer" data-title="Action footer">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="Action footer with keyboard hints and a visible boundary."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Rust-rendered preview</span></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::footer</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Action footer Rust API"><code>footer::draw(frame, area, &amp;rows, style);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="activity" aria-labelledby="activity-heading">
+        <div class="gallery-section-heading"><h2 id="activity-heading">Activity indicators</h2><p>A busy spinner, cycling dots, and a travelling pulse for pending work.</p></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="activity" data-title="Activity indicators">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="Three waiting indicators: a spinner, cycling dots, and a travelling pulse. These do not show progress."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Rust-rendered preview</span><button class="ui-button ui-button--quiet" type="button" aria-label="Play activity indicators preview" hidden>Play</button></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::animation</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Activity indicators Rust API"><code>animation::spinner(tick, motion);
+animation::dots(tick, motion);
+animation::pulse(20, tick, motion);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="dropdown" aria-labelledby="dropdown-heading">
+        <div class="gallery-section-heading"><h2 id="dropdown-heading">Searchable dropdown</h2><p>Finite choices and editable names.</p></div>
+        <div class="gallery-terminal-grid">
+          <figure class="gallery-terminal" data-tui-recording="dropdown-choice" data-title="Finite choices">
+            <figcaption><h3>Finite choices</h3><p>Move, filter, choose, and cancel.</p></figcaption>
+            <a href="screenshots/dropdown-choice.gif" aria-label="Open full-size finite choices recording"><img src="screenshots/dropdown-choice.png" data-poster="screenshots/dropdown-choice.png" data-gif="screenshots/dropdown-choice.gif" alt="Finite choices: Move, filter, choose, and cancel." width="624" height="480" loading="lazy"></a>
+            <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          </figure>
+          <figure class="gallery-terminal" data-tui-recording="dropdown-interfaces" data-title="Editable names">
+            <figcaption><h3>Editable names</h3><p>Filter suggestions or enter a name.</p></figcaption>
+            <a href="screenshots/dropdown-interfaces.gif" aria-label="Open full-size editable names recording"><img src="screenshots/dropdown-interfaces.png" data-poster="screenshots/dropdown-interfaces.png" data-gif="screenshots/dropdown-interfaces.gif" alt="Editable names: Filter suggestions or enter a name." width="624" height="480" loading="lazy"></a>
+            <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          </figure>
+          <figure class="gallery-terminal" data-tui-recording="dropdown-empty" data-title="Empty">
+            <figcaption><h3>Empty</h3><p>Enter a name, then refresh the choices.</p></figcaption>
+            <a href="screenshots/dropdown-empty.gif" aria-label="Open full-size empty recording"><img src="screenshots/dropdown-empty.png" data-poster="screenshots/dropdown-empty.png" data-gif="screenshots/dropdown-empty.gif" alt="Empty: Enter a name, then refresh the choices." width="624" height="480" loading="lazy"></a>
+            <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          </figure>
+          <figure class="gallery-terminal" data-tui-recording="dropdown-loading" data-title="Loading">
+            <figcaption><h3>Loading</h3><p>Refresh the list and choose an interface.</p></figcaption>
+            <a href="screenshots/dropdown-loading.gif" aria-label="Open full-size loading recording"><img src="screenshots/dropdown-loading.png" data-poster="screenshots/dropdown-loading.png" data-gif="screenshots/dropdown-loading.gif" alt="Loading: Refresh the list and choose an interface." width="624" height="480" loading="lazy"></a>
+            <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          </figure>
+          <figure class="gallery-terminal" data-tui-recording="dropdown-failed" data-title="Lookup failed">
+            <figcaption><h3>Lookup failed</h3><p>Keep the draft while retrying the lookup.</p></figcaption>
+            <a href="screenshots/dropdown-failed.gif" aria-label="Open full-size lookup failed recording"><img src="screenshots/dropdown-failed.png" data-poster="screenshots/dropdown-failed.png" data-gif="screenshots/dropdown-failed.gif" alt="Lookup failed: Keep the draft while retrying the lookup." width="624" height="480" loading="lazy"></a>
+            <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          </figure>
+        </div>
+        <details class="gallery-source gallery-terminal-source">
+          <summary>Use the shared widget</summary>
+          <p>Import <code>netfyr_tui_design::dropdown</code> from the crate in <code>tui/</code>. Pass prepared options and styles to <code>dropdown::draw</code>; your application owns filtering, keyboard input, and lookups.</p>
+          <p>The crate's <code>tui/README.md</code> and <code>tui/dropdown.md</code> document the API and usage rules.</p>
+        </details>
+      </section>
+      <section class="gallery-component" id="flame" aria-labelledby="flame-heading">
+        <div class="gallery-section-heading"><h2 id="flame-heading">Flame</h2></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="flame" data-title="Flame">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="The netfyr flame rendered as terminal characters."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Rust-rendered preview</span><button class="ui-button ui-button--quiet" type="button" aria-label="Play flame preview" hidden>Play</button></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::flame</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Flame Rust API"><code>flame::frame(tick, motion);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="glyphs" aria-labelledby="glyphs-heading">
+        <div class="gallery-section-heading"><h2 id="glyphs-heading">Glyphs</h2><p>The font's flame and separators, with standard-character fallbacks.</p></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="glyphs" data-title="Glyphs">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="netfyr symbols: the flame and solid or outlined separators pointing left and right. Standard mode uses an asterisk and angle brackets."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Optional · netfyr symbols</span></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <p>Install the <a href="../downloads/netfyr-symbols.zip" download>symbols font</a>, then run the gallery with <code>--fixture glyphs --glyphs netfyr</code>. Supporting terminals keep your text font and use fallback for the symbols. Standard characters remain available.</p>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::glyphs</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Glyphs Rust API"><code>use netfyr_tui_design::glyphs::{Glyph, GlyphSet};
+
+let glyphs = GlyphSet::Netfyr;
+let mark = glyphs.character(Glyph::Flame);
+let separator = glyphs.character(Glyph::RightOutline);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="settings" aria-labelledby="settings-heading">
+        <div class="gallery-section-heading"><h2 id="settings-heading">Settings row</h2></div>
+        <div class="gallery-example gallery-recording-settings" data-tui-recording="settings" data-title="Settings row">
+          <a href="screenshots/settings.gif" aria-label="Open full-size settings recording"><img src="screenshots/settings.png" data-poster="screenshots/settings.png" data-gif="screenshots/settings.gif" alt="Moving between settings rows and toggling Motion and Eye candy off and on." width="624" height="480" loading="lazy"></a>
+          <div class="gallery-recording-controls"><button class="ui-button ui-button--quiet" type="button" data-recording-toggle hidden>Play</button></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::setting_row</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Settings row Rust API"><code>setting_row::draw(frame, area, row, style);
+setting_row::toggle_value(enabled);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="replay" aria-labelledby="replay-heading">
+        <div class="gallery-section-heading"><h2 id="replay-heading">Trace replay</h2><p>A replay of measured round-trip time. Unknown timings stay unknown.</p></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="replay" data-title="Trace replay">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="Synthetic round-trip timing replay, including an unknown result. This is a fixture, not live network activity."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Synthetic data · Rust-rendered preview</span><button class="ui-button ui-button--quiet" type="button" aria-label="Play trace replay preview" hidden>Play</button></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::lanes</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Trace replay Rust API"><code>lanes::replay(width, Some(rtt_ms), tick, motion);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="gallery-component" id="traffic" aria-labelledby="traffic-heading">
+        <div class="gallery-section-heading"><h2 id="traffic-heading">Traffic lanes</h2><p>Higher transfer rates move faster on a logarithmic scale. Idle stays still.</p></div>
+        <div class="gallery-example gallery-tui-preview" data-tui-preview="traffic" data-title="Traffic lanes">
+          <div class="gallery-tui-screen"><svg role="img" aria-label="Synthetic transmit rates: 0 B/s stays idle; 1 B/s, 1 KiB/s, 1 MiB/s and 1 GiB/s move progressively faster. These are example rates."></svg><p role="status"></p></div>
+          <div class="gallery-tui-toolbar"><span>Synthetic data · Rust-rendered preview</span><button class="ui-button ui-button--quiet" type="button" aria-label="Play traffic lanes preview" hidden>Play</button></div>
+          <details class="gallery-source"><summary>Rust</summary>
+            <div class="ui-codebox" data-ui-codebox data-ui-language="rust">
+              <div class="ui-codebox-header"><span>netfyr_tui_design::lanes</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-label="Traffic lanes Rust API"><code>lanes::traffic(width, direction, active, motion, phase);</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </details>
+        </div>
+      </section>
+      <footer class="ui-footer gallery-footer">
+        <span class="ui-footer-brand"><img class="ui-footer-mark" src="../assets/netfyr-mark-orange.svg" alt="" width="18" height="18">netfyr design library</span>
+        <a class="ui-footer-link" href="../LICENSES.md">Asset licenses<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </footer>
+    </main>
+  </div>
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>

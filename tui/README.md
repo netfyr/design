@@ -86,7 +86,8 @@ cargo run --locked --example gallery -- --snapshot
 
 Snapshots omit colour and underline; buffer tests verify those styles.
 
-The browser catalogue plays exported frames from these same renderers. Regenerate
+The design site's `/components/tui/` catalogue plays exported frames from these
+same renderers. Regenerate
 them from the repository root after changing a shared component or gallery fixture:
 
 ```sh
@@ -98,7 +99,7 @@ only paints supplied terminal cells; it does not recreate the animation logic.
 Its glyph preview exports both sets and uses the bundled netfyr symbols font when
 available, so visitors do not need a local installation.
 
-Capture the dropdown screenshots for the component website in Kitty, at 48×16 cells
+Capture the dropdown screenshots for the design site in Kitty, at 48×16 cells
 with Noto Sans Mono, 16 pt. Generate the PNGs from the repository root with
 `python3 tui/scripts/capture-gallery.py`. This requires Cargo, fontconfig, the
 Noto Sans Mono font, a display and Kitty with its `screenshot` remote command.

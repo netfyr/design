@@ -23,6 +23,7 @@ html[data-theme="dark"]{color-scheme:dark;--background:#211c19;--surface:#292420
 
 .sidebar nav { margin-top: 35px; margin-bottom: 50px; }
 .sidebar-footer { margin-top: auto; }
+@media(max-width:760px){html:not(.has-navigation) .sidebar{position:static;width:100%;transform:none}html:not(.has-navigation) :is(.mobile-menu,.mobile-close){display:none}}
 
 .style-control { min-width: 82px; }
 .playground-controls { gap: 20px; flex-wrap: wrap; }

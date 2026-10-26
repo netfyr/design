@@ -1,0 +1,46 @@
+[data-ui-theme] .ui-theme-toggle {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ui-radius, 6px);
+  background: transparent;
+  color: var(--ui-text, currentColor);
+  cursor: pointer;
+}
+
+[data-ui-theme] .ui-theme-toggle:hover {
+  background: var(--ui-nav-hover, color-mix(in srgb, currentColor 8%, transparent));
+}
+
+[data-ui-theme] .ui-theme-toggle:focus-visible {
+  outline: 2px solid var(--ui-accent, currentColor);
+  outline-offset: 3px;
+}
+
+[data-ui-theme] .ui-theme-toggle:disabled,
+[data-ui-theme] .ui-theme-toggle[aria-disabled="true"] {
+  opacity: .5;
+  cursor: default;
+}
+
+[data-ui-theme] .ui-theme-toggle > svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[data-ui-theme] .ui-theme-toggle[hidden],
+[data-ui-theme] .ui-theme-toggle [hidden] {
+  display: none !important;
+}

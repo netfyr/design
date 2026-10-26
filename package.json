@@ -5,6 +5,10 @@
   "description": "The netfyr design system and type library",
   "type": "module",
   "scripts": {
+    "dev:web": "node scripts/serve.mjs --port 4175",
+    "build:web": "node web/scripts/build.mjs",
+    "check:web": "node web/scripts/check.mjs",
+    "check:web:browser": "node web/scripts/check-browser.mjs",
     "postinstall": "node scripts/vendor.mjs",
     "check:flame": "node scripts/check-flame-browser.mjs",
     "check:pages": "node scripts/check-pages.mjs",

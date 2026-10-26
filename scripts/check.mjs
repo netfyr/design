@@ -33,6 +33,7 @@ if (!html.includes('lang="en"') || !html.includes('name="viewport"')) throw new 
 const references = [...html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)].map(match => match[1]);
 for (const reference of new Set(references)) {
   if (/^(?:https?:|data:)/.test(reference)) continue;
+  if (['components/', 'components/tui/'].includes(reference)) continue;
   const asset = reference.split(/[?#]/)[0];
   const available = await Promise.allSettled(['src/', 'public/'].map(directory => access(new URL(directory + asset, root))));
   if (available.every(result => result.status === 'rejected')) throw new Error(`Missing linked asset: ${reference}`);

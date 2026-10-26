@@ -15,7 +15,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       contents: read
       pages: read
@@ -27,9 +27,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run check:web
       - run: npm run build
       - run: npm install --global agent-browser@0.26.0
       - run: agent-browser install --with-deps
+      - run: npm run check:web:browser
       - run: npm run check:pages
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

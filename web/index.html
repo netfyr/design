@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Reusable web controls and interactive examples from the netfyr design library.">
+  <title>Web components · netfyr design library</title>
+  <link rel="icon" href="assets/netfyr-mark-orange.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/components.css">
+  <link rel="stylesheet" href="src/theme.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body class="ui" data-ui-theme>
+  <script>
+    {
+      let mode;
+      try { mode = localStorage.getItem('netfyr-theme'); } catch {}
+      document.body.dataset.uiMode = ['light', 'dark'].includes(mode)
+        ? mode : matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+  </script>
+  <a class="gallery-skip" href="#main">Skip to components</a>
+  <svg class="gallery-icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="gallery-i-buttons" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 12h8"/></symbol>
+    <symbol id="gallery-i-codebox" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 16"/></symbol>
+    <symbol id="gallery-i-dialogs" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18m-6 7h3"/></symbol>
+    <symbol id="gallery-i-feedback" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 4h.01"/></symbol>
+    <symbol id="gallery-i-footer" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15h18m-14 3h4m6 0h2"/></symbol>
+    <symbol id="gallery-i-navigation" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M5 7h2m-2 4h2m-2 4h2"/></symbol>
+    <symbol id="gallery-i-selection" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="gallery-i-tables" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 9v11"/></symbol>
+    <symbol id="gallery-i-tabs" viewBox="0 0 24 24"><path d="M3 9h18v11H3Zm0 0V4h7v5m0-5h7v5m0-5h4v5"/></symbol>
+    <symbol id="gallery-i-forms" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 9v6m3-3h5"/></symbol>
+    <symbol id="gallery-i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
+    <symbol id="gallery-i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="gallery-i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="gallery-i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 16v4h14v-4"/></symbol>
+    <symbol id="gallery-site-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="gallery-site-type" viewBox="0 0 24 24"><path d="m3 19 6-14 6 14M5 14h8m3-2c5-3 7 0 4 2-6 0-4 6 0 3m0-6v7"/></symbol>
+    <symbol id="gallery-site-palette" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4"/><circle cx="16" cy="8" r="4"/><circle cx="8" cy="16" r="4"/><circle cx="16" cy="16" r="4"/></symbol>
+    <symbol id="gallery-site-spacing" viewBox="0 0 24 24"><path d="M4 4v16M20 4v16M7 12h10m-7-3-3 3 3 3m4-6 3 3-3 3"/></symbol>
+    <symbol id="gallery-site-folder" viewBox="0 0 24 24"><path d="M3 7V4h6l3 3h9v13H3Z"/></symbol>
+    <symbol id="gallery-site-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol>
+    <symbol id="gallery-site-tui" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+    <symbol id="gallery-site-logo" viewBox="0 2 128 128"><path fill="currentColor" stroke="none" d="M90 12a6 6 0 0 0-10.24264-4.24264L15.75736 71.75736A6 6 0 0 0 14 76a50 50 0 0 0 100 0V52a6 6 0 0 0-10.24264-4.24264L90 61.51472ZM78 26.48528V76a6 6 0 0 0 10.24264 4.24264L102 66.48528V76A38 38 0 0 1 26.07643 78.40885Z"/></symbol>
+  </svg>
+  <div class="gallery-backdrop" id="gallery-backdrop" hidden></div>
+  <aside class="ui-navigation gallery-sidebar" id="gallery-sidebar" aria-label="Design library navigation">
+    <a class="ui-brand gallery-brand" href="../#overview" data-design-page="overview" aria-label="netfyr design library home"><svg class="ui-brand-logo" viewBox="0 0 440 128" width="440" height="128" aria-hidden="true"><g class="ui-brand-mark"><path fill="#FF7A1A" transform="translate(0 -2)" d="M90 12a6 6 0 0 0-10.24264-4.24264L15.75736 71.75736A6 6 0 0 0 14 76a50 50 0 0 0 100 0V52a6 6 0 0 0-10.24264-4.24264L90 61.51472ZM78 26.48528V76a6 6 0 0 0 10.24264 4.24264L102 66.48528V76A38 38 0 0 1 26.07643 78.40885Z"/></g><path fill="currentColor" transform="translate(140.010695 100.470588) scale(0.106951872 -0.106951872)" d="M56 0V338V520H166V504Q192 514 220 520Q241 524 266 526Q291 528 316 528Q342 528 368 525Q394 522 416 516Q438 510 461 500Q483 489 499 477Q516 464 531 446Q546 427 555 408Q564 390 569 367Q574 343 574 319V0H464V319Q464 336 462 347Q459 358 454 370Q449 381 444 388Q438 394 429 401Q419 408 409 413Q399 417 384 421Q369 425 353 427Q337 429 316 429Q294 429 277 428Q259 426 243 423Q228 420 218 417Q207 413 198 407Q189 401 185 397Q180 392 175 383Q170 374 168 364Q166 354 166 338V0ZM920 -8Q891 -8 862 -4Q833 0 809 8Q785 16 762 30Q738 44 721 61Q704 78 691 101Q677 124 669 148Q662 172 658 201Q654 229 654 260Q654 290 658 319Q661 347 669 371Q676 395 690 418Q703 441 719 458Q735 475 759 490Q782 504 807 512Q831 520 860 524Q889 528 919 528Q946 528 974 524Q1002 520 1025 513Q1048 505 1071 492Q1094 478 1111 461Q1127 445 1141 423Q1155 400 1164 376Q1171 353 1176 324Q1180 295 1180 265Q1180 251 1173 240Q1165 229 1153 222Q1140 215 1125 215H766Q769 194 775 175Q781 158 787 148Q793 137 803 127Q813 117 823 112Q832 106 847 101Q863 96 880 94Q897 91 920 91Q952 91 975 94Q997 97 1017 104Q1036 110 1049 118Q1061 126 1074 139L1156 73Q1137 54 1111 38Q1085 21 1056 11Q1028 2 993 -3Q958 -8 920 -8ZM768 307H1066Q1064 327 1058 344Q1053 362 1047 374Q1040 386 1030 397Q1020 408 1011 414Q1001 420 987 425Q971 431 956 434Q940 436 919 436Q895 436 878 434Q861 431 845 425Q830 419 821 413Q811 407 802 396Q792 384 786 372Q780 360 775 341Q770 325 768 307ZM1432 0Q1420 0 1407 1Q1393 2 1382 4Q1369 7 1355 13Q1340 19 1329 26Q1319 34 1309 48Q1299 61 1294 74Q1290 85 1288 101Q1285 116 1285 132V421H1229V520H1285V656H1395V520H1485V421H1395V132Q1395 121 1396 116Q1397 110 1398 106L1399 103H1400L1401 102L1406 101Q1415 99 1432 99H1481V0ZM1576 0V421H1525V520H1576V556Q1576 578 1579 598Q1582 618 1587 632Q1593 649 1605 665Q1616 681 1629 690Q1641 700 1659 707Q1677 713 1692 716Q1706 718 1723 719Q1739 720 1754 720H1781V621H1754Q1741 621 1731 621Q1721 620 1713 619Q1705 617 1704 617Q1702 616 1699 614Q1695 611 1695 610Q1694 609 1692 602Q1689 594 1688 584Q1686 573 1686 556V520H1763V421H1686V0ZM1812 -220V-130H1867Q1884 -130 1895 -129Q1905 -128 1911 -125Q1917 -123 1921 -117Q1924 -111 1928 -101Q1931 -92 1937 -78L2000 72L1809 520H1922L2056 205L2188 520H2301L2041 -100Q2026 -134 2003 -161Q1979 -188 1946 -204Q1912 -220 1867 -220ZM2373 0V520H2483V424Q2492 464 2507 487Q2522 509 2544 519Q2565 528 2594 528Q2613 528 2630 525Q2647 522 2665 516V415Q2634 429 2597 429Q2574 429 2554 423Q2533 417 2517 405Q2501 393 2492 374Q2483 355 2483 329V0Z"/></svg><span class="ui-brand-subtitle">design library</span></a>
+    <button class="gallery-icon-button gallery-close-menu" id="gallery-close-menu" type="button" aria-label="Close navigation"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-close"/></svg></button>
+    <nav class="ui-nav-links gallery-site-links" aria-label="Design library">
+      <a href="../#overview" data-design-page="overview"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-grid"/></svg><span>Overview</span></a>
+      <p class="ui-nav-label">Foundations</p>
+      <a href="../#typography" data-design-page="typography"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-type"/></svg><span>Typography</span></a>
+      <a href="../#colors" data-design-page="colors"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-palette"/></svg><span>Color palette</span></a>
+      <a href="../#spacing" data-design-page="spacing"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-spacing"/></svg><span>Space &amp; scale</span></a>
+      <p class="ui-nav-label">Identity</p>
+      <a href="../#brand" data-design-page="brand"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-logo"/></svg><span>Logo</span></a>
+      <a href="../#resources" data-design-page="resources"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-folder"/></svg><span>Resources</span></a>
+      <p class="ui-nav-label">Components</p>
+      <a data-surface="web" href="./" aria-current="page"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-web"/></svg><span>Web components</span></a>
+      <a data-surface="tui" href="tui/"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-site-tui"/></svg><span>TUI components</span></a>
+    </nav>
+    <nav class="ui-nav-links gallery-component-links" aria-label="Web components">
+      <p class="ui-nav-label">On this page</p>
+      <a href="#buttons" aria-current="location"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-buttons"/></svg><span>Buttons</span></a>
+      <a href="#codebox"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-codebox"/></svg><span>Code box</span></a>
+      <a href="#dialogs"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-dialogs"/></svg><span>Dialogs</span></a>
+      <a href="#feedback"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-feedback"/></svg><span>Feedback</span></a>
+      <a href="#footer"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-footer"/></svg><span>Footer</span></a>
+      <a href="#navigation"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-navigation"/></svg><span>Navigation</span></a>
+      <a href="#selection"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-selection"/></svg><span>Selection</span></a>
+      <a href="#tables"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-tables"/></svg><span>Tables</span></a>
+      <a href="#tabs"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-tabs"/></svg><span>Tabs</span></a>
+      <a href="#forms"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-forms"/></svg><span>Text fields</span></a>
+      <a href="#theme"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-sun"/></svg><span>Theme toggle</span></a>
+    </nav>
+    <div class="gallery-sidebar-footer"><hr class="ui-nav-divider"><a href="README.md">Usage reference <span aria-hidden="true">↗</span></a></div>
+  </aside>
+  <div class="gallery-workspace">
+    <header class="gallery-topbar">
+      <button class="gallery-icon-button gallery-open-menu" id="gallery-open-menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="gallery-sidebar"><svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-menu"/></svg></button>
+      <div class="gallery-breadcrumb"><a href="../#overview" data-design-page="overview">Design library</a><span aria-hidden="true">/</span><span>Web</span><span aria-hidden="true">/</span><strong id="gallery-current-component">Buttons</strong></div>
+      <button class="ui-theme-toggle" id="gallery-theme-toggle" type="button" data-ui-theme-toggle aria-label="Switch to dark theme" hidden>
+        <svg data-ui-theme-icon="light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg data-ui-theme-icon="dark" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z"/></svg>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="gallery-intro">
+        <div><p class="gallery-eyebrow">Design library</p><h1>Web components</h1><p>Interactive examples and source.</p></div>
+        <a class="ui-button gallery-download" href="downloads/netfyr-web-components-0.1.0.tgz" download>Download package <svg class="gallery-icon" aria-hidden="true"><use href="#gallery-i-download"/></svg></a>
+      </div>
+      <details class="gallery-setup ui-disclosure"><summary>Use in a project</summary><p>Load the stylesheet, wrap your controls in <code>.ui</code>, and initialize the interactive components.</p><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Installation HTML"><code>&lt;link rel="stylesheet" href="./src/components.css"&gt;
+&lt;main class="ui"&gt;…&lt;/main&gt;
+&lt;script type="module"&gt;
+  import { enhance } from './src/components.js';
+  const cleanup = enhance(document.querySelector('.ui'));
+&lt;/script&gt;</code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div><p><a href="README.md">Read the API and installation guide.</a></p><p><a href="LICENSE">MIT · component code</a> / <a href="assets/fonts/OFL.txt">OFL · fonts</a></p></details>
+
+      <section class="gallery-component" id="buttons" aria-labelledby="buttons-heading">
+        <div class="gallery-section-heading"><h2 id="buttons-heading">Buttons</h2><p>Use a button for an action and a link for navigation.</p></div>
+        <div class="gallery-example" data-example="buttons">
+          <div class="gallery-stage">
+            <div class="ui-actions"><button class="ui-button ui-button--primary" type="button" id="demo-add">Add item</button><button class="ui-button ui-button--danger" type="button" id="demo-remove">Remove last</button><a class="ui-button ui-button--quiet" href="#forms">View fields <span aria-hidden="true">↗</span></a><button class="ui-button" type="button" disabled>Unavailable</button></div>
+            <ul class="gallery-items" id="demo-items" aria-label="Example items" aria-live="polite"><li>Item 1</li><li>Item 2</li></ul>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Buttons example HTML"><code id="source-buttons"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="codebox" aria-labelledby="codebox-heading">
+        <div class="gallery-section-heading"><h2 id="codebox-heading">Code box</h2><p>Preserves tabs and spaces when copying.</p></div>
+        <div class="gallery-example" data-example="codebox">
+          <div class="gallery-stage">
+            <div class="ui-codebox" data-ui-codebox data-ui-language="html" id="demo-codebox">
+              <div class="ui-codebox-header"><span id="demo-code-label">example.html</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy id="demo-code-copy">Copy</button></div>
+              <pre class="ui-code" tabindex="0" role="region" aria-labelledby="demo-code-label"><code id="demo-code-content">&lt;main class="ui" data-ui-mode="light" aria-label="Example controls"&gt;
+  &lt;button class="ui-button ui-button--primary" type="button"&gt;
+    Save &amp;amp; continue
+  &lt;/button&gt;
+&lt;/main&gt;</code></pre>
+              <p class="ui-codebox-status" data-ui-copy-status role="status"></p>
+            </div>
+          </div>
+          <details class="gallery-source"><summary>HTML + initialization</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Codebox example HTML"><code id="source-codebox"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="dialogs" aria-labelledby="dialogs-heading">
+        <div class="gallery-section-heading"><h2 id="dialogs-heading">Dialogs</h2><p>Keep the decision clear. Return focus to the control that opened it.</p></div>
+        <div class="gallery-example" data-example="dialogs">
+          <div class="gallery-stage">
+            <button class="ui-button" type="button" id="demo-open-dialog" data-ui-open-dialog="demo-dialog">Review archive action</button>
+            <p class="gallery-result" id="demo-dialog-status" role="status"></p>
+            <dialog class="ui-dialog" id="demo-dialog" aria-labelledby="demo-dialog-title" aria-describedby="demo-dialog-description"><form method="dialog"><h3 id="demo-dialog-title">Archive this example?</h3><p id="demo-dialog-description">The example will leave the active list.</p><div class="ui-actions"><button class="ui-button" id="demo-dialog-cancel" value="cancel" autofocus>Cancel</button><button class="ui-button ui-button--primary" id="demo-dialog-confirm" value="confirm">Archive example</button></div></form></dialog>
+          </div>
+          <details class="gallery-source"><summary>HTML + initialization</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Dialogs example HTML"><code id="source-dialogs"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="feedback" aria-labelledby="feedback-heading">
+        <div class="gallery-section-heading"><h2 id="feedback-heading">Feedback</h2><p>Name the state in text and put recovery beside the problem.</p></div>
+        <div class="gallery-example" data-example="feedback">
+          <div class="gallery-stage gallery-feedback">
+            <div class="ui-actions"><span class="ui-badge">Draft</span><span class="ui-badge ui-badge--success">Published</span><span class="ui-badge ui-badge--warning">Needs review</span><span class="ui-badge ui-badge--danger">Failed</span></div>
+            <div class="ui-notice ui-notice--danger" id="demo-feedback-status" role="status"><div><strong>Could not load the example records.</strong></div><button class="ui-button" type="button" id="demo-retry">Retry example</button></div>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Feedback example HTML"><code id="source-feedback"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="footer" aria-labelledby="footer-heading">
+        <div class="gallery-section-heading"><h2 id="footer-heading">Footer</h2></div>
+        <div class="gallery-example" data-example="footer">
+          <div class="gallery-stage">
+            <footer class="ui-footer">
+              <span class="ui-footer-brand"><img class="ui-footer-mark" src="assets/netfyr-mark-orange.svg" alt="" width="18" height="18">netfyr design library</span>
+              <a class="ui-footer-link" href="../#resources" data-design-page="resources">Assets &amp; resources<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            </footer>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Footer example HTML"><code id="source-footer"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="navigation" aria-labelledby="navigation-heading">
+        <div class="gallery-section-heading"><h2 id="navigation-heading">Navigation</h2></div>
+        <div class="gallery-example" data-example="navigation">
+          <div class="gallery-stage">
+            <aside class="ui-navigation" aria-label="Example navigation" style="width:265px;max-width:100%">
+              <a class="ui-brand" href="#main" aria-label="netfyr design library home"><svg class="ui-brand-logo" viewBox="0 0 440 128" width="440" height="128" aria-hidden="true"><g class="ui-brand-mark"><path fill="#FF7A1A" transform="translate(0 -2)" d="M90 12a6 6 0 0 0-10.24264-4.24264L15.75736 71.75736A6 6 0 0 0 14 76a50 50 0 0 0 100 0V52a6 6 0 0 0-10.24264-4.24264L90 61.51472ZM78 26.48528V76a6 6 0 0 0 10.24264 4.24264L102 66.48528V76A38 38 0 0 1 26.07643 78.40885Z"/></g><path fill="currentColor" transform="translate(140.010695 100.470588) scale(0.106951872 -0.106951872)" d="M56 0V338V520H166V504Q192 514 220 520Q241 524 266 526Q291 528 316 528Q342 528 368 525Q394 522 416 516Q438 510 461 500Q483 489 499 477Q516 464 531 446Q546 427 555 408Q564 390 569 367Q574 343 574 319V0H464V319Q464 336 462 347Q459 358 454 370Q449 381 444 388Q438 394 429 401Q419 408 409 413Q399 417 384 421Q369 425 353 427Q337 429 316 429Q294 429 277 428Q259 426 243 423Q228 420 218 417Q207 413 198 407Q189 401 185 397Q180 392 175 383Q170 374 168 364Q166 354 166 338V0ZM920 -8Q891 -8 862 -4Q833 0 809 8Q785 16 762 30Q738 44 721 61Q704 78 691 101Q677 124 669 148Q662 172 658 201Q654 229 654 260Q654 290 658 319Q661 347 669 371Q676 395 690 418Q703 441 719 458Q735 475 759 490Q782 504 807 512Q831 520 860 524Q889 528 919 528Q946 528 974 524Q1002 520 1025 513Q1048 505 1071 492Q1094 478 1111 461Q1127 445 1141 423Q1155 400 1164 376Q1171 353 1176 324Q1180 295 1180 265Q1180 251 1173 240Q1165 229 1153 222Q1140 215 1125 215H766Q769 194 775 175Q781 158 787 148Q793 137 803 127Q813 117 823 112Q832 106 847 101Q863 96 880 94Q897 91 920 91Q952 91 975 94Q997 97 1017 104Q1036 110 1049 118Q1061 126 1074 139L1156 73Q1137 54 1111 38Q1085 21 1056 11Q1028 2 993 -3Q958 -8 920 -8ZM768 307H1066Q1064 327 1058 344Q1053 362 1047 374Q1040 386 1030 397Q1020 408 1011 414Q1001 420 987 425Q971 431 956 434Q940 436 919 436Q895 436 878 434Q861 431 845 425Q830 419 821 413Q811 407 802 396Q792 384 786 372Q780 360 775 341Q770 325 768 307ZM1432 0Q1420 0 1407 1Q1393 2 1382 4Q1369 7 1355 13Q1340 19 1329 26Q1319 34 1309 48Q1299 61 1294 74Q1290 85 1288 101Q1285 116 1285 132V421H1229V520H1285V656H1395V520H1485V421H1395V132Q1395 121 1396 116Q1397 110 1398 106L1399 103H1400L1401 102L1406 101Q1415 99 1432 99H1481V0ZM1576 0V421H1525V520H1576V556Q1576 578 1579 598Q1582 618 1587 632Q1593 649 1605 665Q1616 681 1629 690Q1641 700 1659 707Q1677 713 1692 716Q1706 718 1723 719Q1739 720 1754 720H1781V621H1754Q1741 621 1731 621Q1721 620 1713 619Q1705 617 1704 617Q1702 616 1699 614Q1695 611 1695 610Q1694 609 1692 602Q1689 594 1688 584Q1686 573 1686 556V520H1763V421H1686V0ZM1812 -220V-130H1867Q1884 -130 1895 -129Q1905 -128 1911 -125Q1917 -123 1921 -117Q1924 -111 1928 -101Q1931 -92 1937 -78L2000 72L1809 520H1922L2056 205L2188 520H2301L2041 -100Q2026 -134 2003 -161Q1979 -188 1946 -204Q1912 -220 1867 -220ZM2373 0V520H2483V424Q2492 464 2507 487Q2522 509 2544 519Q2565 528 2594 528Q2613 528 2630 525Q2647 522 2665 516V415Q2634 429 2597 429Q2574 429 2554 423Q2533 417 2517 405Q2501 393 2492 374Q2483 355 2483 329V0Z"/></svg><span class="ui-brand-subtitle">design library</span></a>
+              <nav class="ui-nav-links" aria-label="Example component links">
+                <p class="ui-nav-label">Actions</p>
+                <a href="#buttons" aria-current="location">Buttons</a>
+                <hr class="ui-nav-divider">
+                <p class="ui-nav-label">Content</p>
+                <a href="#codebox">Code box</a>
+                <a href="#tables">Tables</a>
+                <hr class="ui-nav-divider">
+                <p class="ui-nav-label">Resources</p>
+                <a href="https://github.com/netfyr/design" aria-label="Source repository (external site)">Source repository<svg class="ui-nav-trailing" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+              </nav>
+            </aside>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Navigation example HTML"><code id="source-navigation"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="selection" aria-labelledby="selection-heading">
+        <div class="gallery-section-heading"><h2 id="selection-heading">Selection</h2><p>Native controls keep keyboard interaction and form values intact.</p></div>
+        <div class="gallery-example" data-example="selection">
+          <div class="gallery-stage gallery-selection">
+            <div class="ui-field"><label class="ui-label" for="demo-density">Density</label><select class="ui-select" id="demo-density" name="density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option><option value="spacious">Spacious</option></select></div>
+            <fieldset class="gallery-fieldset"><legend>Include in export</legend><label class="ui-check"><input type="checkbox" name="include" value="comments" checked> Comments</label><label class="ui-check"><input type="checkbox" name="include" value="history"> Change history</label><label class="ui-check"><input type="checkbox" disabled> Private attachments</label></fieldset>
+            <fieldset class="gallery-fieldset"><legend>Visibility</legend><label class="ui-check"><input type="radio" name="visibility" value="private" checked> Private</label><label class="ui-check"><input type="radio" name="visibility" value="team"> Team</label></fieldset>
+            <div class="ui-field"><label class="ui-check"><input class="ui-switch" id="demo-motion" type="checkbox" role="switch" name="motion" checked><span>Motion</span></label></div>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Selection example HTML"><code id="source-selection"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="tables" aria-labelledby="tables-heading">
+        <div class="gallery-section-heading"><h2 id="tables-heading">Tables</h2><p>Keep comparable values in columns and overflow inside the table.</p></div>
+        <div class="gallery-example" data-example="tables">
+          <div class="gallery-stage">
+            <div class="gallery-table-tools"><div class="ui-field"><label class="ui-label" for="demo-table-filter">Filter records</label><input class="ui-input" id="demo-table-filter" type="search" placeholder="Search by name or status" autocomplete="off"></div><p class="ui-help" id="demo-table-count" role="status">4 records</p></div>
+            <div class="ui-table-wrap" tabindex="0" role="region" aria-label="Project documents"><table class="ui-table"><caption>Project documents</caption><thead><tr><th scope="col">Name</th><th scope="col">Status</th><th class="ui-table-cell--end" scope="col">Updated</th></tr></thead><tbody id="demo-table-body"><tr><th scope="row">Field notes</th><td><span class="ui-badge">Draft</span></td><td class="ui-table-cell--end"><time datetime="2026-10-24">24 Oct 2026</time></td></tr><tr><th scope="row">Interface guide</th><td><span class="ui-badge ui-badge--success">Published</span></td><td class="ui-table-cell--end"><time datetime="2026-10-23">23 Oct 2026</time></td></tr><tr><th scope="row">Release checklist</th><td><span class="ui-badge ui-badge--warning">Needs review</span></td><td class="ui-table-cell--end"><time datetime="2026-10-22">22 Oct 2026</time></td></tr><tr><th scope="row">Accessibility notes — keyboard and focus</th><td><span class="ui-badge">Draft</span></td><td class="ui-table-cell--end"><time datetime="2026-10-21">21 Oct 2026</time></td></tr></tbody></table></div>
+            <p class="ui-help" id="demo-table-empty" hidden>No matching records. Change or clear the filter.</p>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Tables example HTML"><code id="source-tables"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="tabs" aria-labelledby="tabs-heading">
+        <div class="gallery-section-heading"><h2 id="tabs-heading">Tabs</h2><p>Arrow keys move between panels. Tab moves into their content.</p></div>
+        <div class="gallery-example" data-example="tabs">
+          <div class="gallery-stage">
+            <div class="ui-tabs" data-ui-tabs id="demo-tabs">
+              <div role="tablist" aria-label="Example project"><button class="ui-tab" type="button" role="tab" id="demo-tab-overview" aria-controls="demo-panel-overview" aria-selected="true">Overview</button><button class="ui-tab" type="button" role="tab" id="demo-tab-activity" aria-controls="demo-panel-activity" aria-selected="false" tabindex="-1">Activity</button><button class="ui-tab" type="button" role="tab" id="demo-tab-settings" aria-controls="demo-panel-settings" aria-selected="false" tabindex="-1" disabled>Settings</button></div>
+              <div class="ui-tabpanel" role="tabpanel" id="demo-panel-overview" aria-labelledby="demo-tab-overview" tabindex="0"><h3>Field notes</h3><p>A shared place for observations and drafts.</p><a href="#forms">Edit project details</a></div>
+              <div class="ui-tabpanel" role="tabpanel" id="demo-panel-activity" aria-labelledby="demo-tab-activity" tabindex="0" hidden><h3>Recent activity</h3><p>A draft was added to the example project.</p><a href="#tables">View example records</a></div>
+              <div class="ui-tabpanel" role="tabpanel" id="demo-panel-settings" aria-labelledby="demo-tab-settings" tabindex="0" hidden><p>Settings are unavailable in this example.</p></div>
+            </div>
+          </div>
+          <details class="gallery-source"><summary>HTML + initialization</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Tabs example HTML"><code id="source-tabs"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+
+      <section class="gallery-component" id="forms" aria-labelledby="forms-heading">
+        <div class="gallery-section-heading"><h2 id="forms-heading">Text fields</h2><p>Keep labels, guidance, and errors beside the field.</p></div>
+        <div class="gallery-example" data-example="forms">
+          <div class="gallery-stage">
+            <form id="demo-form" class="gallery-form" novalidate>
+              <div class="gallery-form-row">
+                <div class="ui-field"><label class="ui-label" for="demo-name">Project name <span class="gallery-required">(required)</span></label><input class="ui-input" id="demo-name" name="name" required maxlength="80" autocomplete="off" placeholder="Field notes" aria-describedby="demo-name-error"><p class="ui-error" id="demo-name-error" hidden></p></div>
+                <div class="ui-field"><label class="ui-label" for="demo-email">Contact email <span class="gallery-required">(required)</span></label><input class="ui-input" id="demo-email" name="email" type="email" required autocomplete="off" placeholder="you@example.org" aria-describedby="demo-email-error"><p class="ui-error" id="demo-email-error" hidden></p></div>
+              </div>
+              <div class="ui-field"><label class="ui-label" for="demo-description">Description</label><textarea class="ui-input" id="demo-description" name="description" rows="3" placeholder="What is this project for?"></textarea></div>
+              <div class="ui-actions"><button class="ui-button ui-button--primary" type="submit">Save example</button><button class="ui-button" type="reset">Reset</button></div>
+              <p class="gallery-result" id="demo-form-status" role="status"></p>
+            </form>
+          </div>
+          <details class="gallery-source"><summary>HTML</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Forms example HTML"><code id="source-forms"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+      <section class="gallery-component" id="theme" aria-labelledby="theme-heading">
+        <div class="gallery-section-heading"><h2 id="theme-heading">Theme toggle</h2></div>
+        <div class="gallery-example" data-example="theme">
+          <div class="gallery-stage">
+            <div class="ui gallery-theme-preview" id="demo-theme" data-ui-theme>
+              <div class="ui-actions">
+                <p>Appearance</p>
+                <button class="ui-theme-toggle" type="button" data-ui-theme-toggle aria-label="Switch to dark theme" hidden>
+                  <svg data-ui-theme-icon="light" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+                  <svg data-ui-theme-icon="dark" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 14a8.5 8.5 0 0 1-10-10A8.5 8.5 0 1 0 20 14Z"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <details class="gallery-source"><summary>HTML + initialization</summary><div class="ui-codebox" data-ui-codebox data-ui-language="html"><div class="ui-codebox-header"><span>HTML</span><button class="ui-button ui-button--quiet" type="button" data-ui-copy>Copy</button></div><pre class="ui-code" tabindex="0" role="region" aria-label="Theme toggle example HTML"><code id="source-theme"></code></pre><p class="ui-codebox-status" data-ui-copy-status role="status"></p></div></details>
+        </div>
+      </section>
+      <footer class="ui-footer gallery-footer"><span class="ui-footer-brand"><img class="ui-footer-mark" src="assets/netfyr-mark-orange.svg" alt="" width="18" height="18">netfyr design library</span><a class="ui-footer-link" href="LICENSES.md">Asset licenses<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></footer>
+    </main>
+  </div>
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>
