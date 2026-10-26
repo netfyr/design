@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { checkFontLicense, fontFaceMetadata } from './check-font-license.mjs';
+import { checkSymbols } from './check-symbols.mjs';
 
 const root = new URL('../', import.meta.url);
 if (await access(new URL('.git', root)).then(() => true, () => false)) {
@@ -99,4 +100,5 @@ if (manifest.version === '0.507') {
       exports.files.some(file => !file.all_outlines_preserved)) throw new Error('Incomplete individual glyph review');
   await access(new URL('public/documents/character-inventory.csv', root));
 }
+await checkSymbols(root);
 console.log(`Checked source syntax and ${required.length} required files in ${fileURLToPath(root)}`);

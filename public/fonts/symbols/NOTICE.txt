@@ -1,0 +1,10 @@
+netfyr symbols 1.000
+
+Derived from the five original symbols in netfyr mono Regular 0.507.
+The glyph outlines and 640-unit advances are unchanged. New character mappings
+use U+100000 through U+100004. The original font release remains unchanged.
+
+This font and its build source use the SIL Open Font License 1.1; see OFL.txt.
+The license covers every glyph, including the flame. Standalone netfyr artwork
+and the netfyr marks have separate rights. Font licensing does not grant
+trademark permission or permission to use netfyr as another project's identity.

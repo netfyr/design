@@ -1,8 +1,9 @@
 # Licenses and marks
 
 - Website software and build scripts outside `font-sources/`: MIT, in `LICENSE`.
-- netfyr Sans and Mono fonts, including their glyphs, and the font source code
-  under `font-sources/0.507/sources/`: SIL Open Font License 1.1, in `OFL.txt`.
+- netfyr Sans, Mono and Symbols fonts, including their glyphs, and the font source
+  code under `font-sources/0.507/sources/` and `font-sources/symbols/`: SIL Open Font
+  License 1.1, in `OFL.txt`.
   Downloads include that license. No Reserved Font Names are declared.
 - Standalone netfyr flame, logo and wordmark artwork, including the assets under
   `public/assets/` and `font-sources/0.507/assets/`, and the identity PDFs:

@@ -1,0 +1,77 @@
+{
+  "schema": "netfyr-symbols/v1",
+  "family": "netfyr symbols",
+  "version": "1.000",
+  "license": "OFL-1.1",
+  "source": {
+    "file": "netfyrmono-Regular.ttf",
+    "version": "0.507",
+    "sha256": "242ae4bb9d29636c4105ac1c745421fdf73f181f5803bab3cc5861cf059a892f"
+  },
+  "generator_sha256": "06ebd8c0b069110d7ac6eba9b5974317039722062653213d4c1502b29e4eefa4",
+  "fonttools": "4.61.1",
+  "glyphs": [
+    {
+      "codepoint": "U+100000",
+      "source_codepoint": "U+E000",
+      "name": "Flame",
+      "advance": 640
+    },
+    {
+      "codepoint": "U+100001",
+      "source_codepoint": "U+E0B0",
+      "name": "Right solid",
+      "advance": 640
+    },
+    {
+      "codepoint": "U+100002",
+      "source_codepoint": "U+E0B1",
+      "name": "Right outline",
+      "advance": 640
+    },
+    {
+      "codepoint": "U+100003",
+      "source_codepoint": "U+E0B2",
+      "name": "Left solid",
+      "advance": 640
+    },
+    {
+      "codepoint": "U+100004",
+      "source_codepoint": "U+E0B3",
+      "name": "Left outline",
+      "advance": 640
+    }
+  ],
+  "verification": {
+    "source_outlines_and_metrics_preserved": true,
+    "license_records_preserved": true,
+    "only_declared_mappings": true,
+    "scope": "Exact derivation checks against the published source; no new visual review or terminal compatibility certification."
+  },
+  "files": {
+    "NOTICE.txt": {
+      "sha256": "19bd52a13be9740a83ecc5aee06f969481dc6842fe815e7f6405fd819e142b0a",
+      "bytes": 558
+    },
+    "OFL.txt": {
+      "sha256": "90761d8cea97cbc8fe1f7c7d7454212c83164ab38a30802ea5b8a78e426777b4",
+      "bytes": 4342
+    },
+    "README.txt": {
+      "sha256": "11a410667fdc7fd9cbc73a5f3663a8194982d6f30e7e3e6667852e73076e6441",
+      "bytes": 772
+    },
+    "netfyr-symbols.zip": {
+      "sha256": "e66aac308a3e6e6e69169cd78b77b1696186937999c06716bca285b6d17155a2",
+      "bytes": 6436
+    },
+    "netfyrsymbols-Regular.ttf": {
+      "sha256": "ded14873ea4d505c2e29bcaeb540d7e2f5d3e420192087e8671680545aed691d",
+      "bytes": 10492
+    },
+    "netfyrsymbols-Regular.woff2": {
+      "sha256": "585a74692defe5ce191eb776590db5d8cfb916ebb32bb85e9f405baaa9c04109",
+      "bytes": 2760
+    }
+  }
+}
