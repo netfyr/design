@@ -1,9 +1,25 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="netfyr fonts, color tokens, logo artwork, and usage guidelines.">
+  <link rel="canonical" href="https://design.netfyr.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="netfyr design library">
+  <meta property="og:title" content="netfyr design library">
+  <meta property="og:description" content="netfyr fonts, color tokens, logo artwork, and usage guidelines.">
+  <meta property="og:url" content="https://design.netfyr.io/">
+  <meta property="og:image" content="https://design.netfyr.io/assets/backgrounds/downloads/netfyr-02-packets-1200x630.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Two bracketed packet lanes with orange markers on a dark terminal screen.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="netfyr design library">
+  <meta name="twitter:description" content="netfyr fonts, color tokens, logo artwork, and usage guidelines.">
+  <meta name="twitter:image" content="https://design.netfyr.io/assets/backgrounds/downloads/netfyr-02-packets-1200x630.jpg">
+  <meta name="twitter:image:alt" content="Two bracketed packet lanes with orange markers on a dark terminal screen.">
   <meta name="theme-color" content="#F7F2EA">
   <script>
     let initialTheme;
@@ -58,6 +74,7 @@
       <a class="nav-link" href="#spacing"><svg><use href="#i-spacing"/></svg>Space &amp; scale</a>
       <p class="nav-label">Identity</p>
       <a class="nav-link" href="#brand"><svg class="flame-svg" viewBox="0 2 128 128" aria-hidden="true"><use href="#netfyr-flame"/></svg>Logo</a>
+      <a class="nav-link" href="#backgrounds"><svg><use href="#i-grid"/></svg>Backgrounds</a>
       <a class="nav-link" href="#resources"><svg><use href="#i-folder"/></svg>Resources<svg class="nav-trailing"><use href="#i-external"/></svg></a>
       <p class="nav-label">Components</p>
       <a class="nav-link" href="components/"><svg><use href="#i-grid"/></svg>Web components</a>
@@ -73,6 +90,7 @@
       <div class="topbar-actions"><button class="icon-button" id="theme-toggle" aria-label="Switch to dark theme"><svg><use href="#i-sun"/></svg></button></div>
     </header>
     <main id="main" tabindex="-1">
+      <noscript><p class="build-note"><a href="assets/backgrounds/downloads.html">Browse background downloads</a>.</p></noscript>
       <section class="page" id="page-typography" aria-labelledby="typography-heading" hidden>
         <div class="page-heading"><div><div class="eyebrow"><span class="tiny-square"></span> Foundations / 01</div><h1 id="typography-heading">Typography</h1></div></div>
         <div class="type-hero">
@@ -157,6 +175,15 @@ white-space: pre;</code></pre><button class="icon-button copy-code" aria-label="
           </div>
           <p class="brand-guidance">Keep the flame upright with a transparent interior. Minimum size: 16 px; prefer 24 px or larger. Leave clear space of at least one eighth of its SVG viewport.</p>
         </section>
+      </section>
+      <section class="page" id="page-backgrounds" aria-labelledby="backgrounds-heading" hidden>
+        <div class="page-heading"><h1 id="backgrounds-heading">Backgrounds</h1></div>
+        <div class="background-toolbar">
+          <label class="control"><span class="control-label">Format</span><select id="background-format" disabled><option>Loading formats…</option></select></label>
+        </div>
+        <p id="background-status" class="background-note" role="status">Loading backgrounds…</p>
+        <button id="background-retry" class="button button-outlined" hidden>Try again</button>
+        <div id="background-grid" class="background-grid"></div>
       </section>
       <section class="page" id="page-resources" aria-labelledby="resources-heading" hidden>
         <div class="page-heading"><div><div class="eyebrow"><span class="tiny-square"></span> Resources / Downloads</div><h1 id="resources-heading">Downloads</h1></div></div>

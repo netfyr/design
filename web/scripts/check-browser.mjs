@@ -337,7 +337,7 @@ try {
 
 function checkDesignNavigation(url, surface) {
   const home = new URL('../', url);
-  const pages = ['overview', 'typography', 'colors', 'spacing', 'brand', 'resources'];
+  const pages = ['overview', 'typography', 'colors', 'spacing', 'brand', 'backgrounds', 'resources'];
   const navigation = evaluate(() => ({
     site: [...document.querySelectorAll('.gallery-site-links [data-design-page]')].map(link => link.dataset.designPage),
     links: [...document.querySelectorAll('[data-design-page]')].map(link => ({ page: link.dataset.designPage, href: link.href })),

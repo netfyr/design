@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { checkFontLicense, fontFaceMetadata } from './check-font-license.mjs';
 import { checkSymbols } from './check-symbols.mjs';
+import { checkBackgrounds } from './check-backgrounds.mjs';
 
 const root = new URL('../', import.meta.url);
 if (await access(new URL('.git', root)).then(() => true, () => false)) {
@@ -102,4 +103,5 @@ if (manifest.version === '0.507') {
   await access(new URL('public/documents/character-inventory.csv', root));
 }
 await checkSymbols(root);
+await checkBackgrounds(root);
 console.log(`Checked source syntax and ${required.length} required files in ${fileURLToPath(root)}`);

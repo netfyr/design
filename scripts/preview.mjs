@@ -14,7 +14,7 @@ const base = values['base-path'];
 if (!/^\/(?:[a-zA-Z0-9_-]+\/)*$/.test(base)) throw new Error('Use a base path such as /design/');
 const port = Number(values.port);
 if (!Number.isInteger(port) || port < 0 || port > 65535) throw new Error('Port must be between 0 and 65535');
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.gif': 'image/gif', '.pdf': 'application/pdf', '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.zip': 'application/zip', '.tgz': 'application/gzip', '.csv': 'text/csv', '.txt': 'text/plain; charset=utf-8', '.md': 'text/plain; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.pdf': 'application/pdf', '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.zip': 'application/zip', '.tgz': 'application/gzip', '.csv': 'text/csv', '.txt': 'text/plain; charset=utf-8', '.md': 'text/plain; charset=utf-8' };
 const allowed = new Set(artifactFiles.map(file => `components/${file}`));
 const directories = new Map([
   ['', 'index.html'],

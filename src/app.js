@@ -8,6 +8,7 @@ const pages = {
   colors: ['Foundations', 'Color palette'],
   spacing: ['Foundations', 'Space & scale'],
   brand: ['Identity', 'Logo'],
+  backgrounds: ['Identity', 'Backgrounds'],
   resources: ['Resources', 'Downloads'],
 };
 let activePage;
@@ -74,6 +75,7 @@ function showPage(page) {
   $('#breadcrumb-group').textContent = pages[page][0];
   $('#breadcrumb-page').textContent = pages[page][1];
   document.title = `${pages[page][1]} · netfyr design library`;
+  if (page === 'backgrounds') loadBackgrounds();
 }
 
 window.addEventListener('hashchange', () => route());
@@ -217,6 +219,97 @@ for (const button of $$('[data-use-family]')) button.addEventListener('click', (
 });
 updatePreview();
 document.fonts.ready.then(resizeText);
+
+let backgrounds;
+let backgroundsLoading = false;
+const backgroundCatalogURL = new URL('assets/backgrounds/catalog.json', document.baseURI);
+function backgroundURL(file) {
+  const url = new URL(file, backgroundCatalogURL);
+  if (!url.href.startsWith(new URL('./', backgroundCatalogURL).href)) throw new Error('Invalid background path');
+  return url.href;
+}
+async function loadBackgrounds() {
+  if (backgrounds || backgroundsLoading) return;
+  backgroundsLoading = true;
+  $('#background-status').textContent = 'Loading backgrounds…';
+  $('#background-retry').setAttribute('aria-disabled', 'true');
+  try {
+    const response = await fetch(backgroundCatalogURL, { signal: AbortSignal.timeout(10000) });
+    if (!response.ok) throw new Error('Backgrounds unavailable');
+    const catalog = await response.json();
+    const dimension = value => Number.isInteger(value) && value > 0;
+    if (catalog.version !== 1 || !catalog.formats?.length || !catalog.artworks?.length ||
+        !catalog.formats.some(format => format.id === catalog.defaultFormat)) throw new Error('Incomplete background catalog');
+    for (const format of catalog.formats) {
+      if (!format.id || !format.label || !format.group || !dimension(format.width) || !dimension(format.height)) throw new Error('Invalid format');
+      for (const artwork of catalog.artworks) {
+        const variant = artwork.variants?.[format.id];
+        if (!artwork.title || !artwork.alt || !dimension(variant?.bytes) || !variant.file ||
+            !variant.preview?.file || !dimension(variant.preview.width) || !dimension(variant.preview.height)) throw new Error('Incomplete background');
+        backgroundURL(variant.file);
+        backgroundURL(variant.preview.file);
+      }
+    }
+    const select = $('#background-format');
+    select.replaceChildren();
+    for (const group of new Set(catalog.formats.map(format => format.group))) {
+      const optgroup = document.createElement('optgroup');
+      optgroup.label = group;
+      for (const format of catalog.formats.filter(format => format.group === group)) {
+        optgroup.append(new Option(`${format.label} · ${format.width} × ${format.height}`, format.id));
+      }
+      select.append(optgroup);
+    }
+    backgrounds = catalog;
+    select.value = catalog.defaultFormat;
+    select.disabled = false;
+    if (document.activeElement === $('#background-retry')) select.focus();
+    $('#background-retry').hidden = true;
+    renderBackgrounds();
+  } catch {
+    $('#background-status').textContent = 'Could not load backgrounds.';
+    $('#background-retry').hidden = false;
+  } finally {
+    backgroundsLoading = false;
+    $('#background-retry').removeAttribute('aria-disabled');
+  }
+}
+function renderBackgrounds() {
+  const format = backgrounds.formats.find(format => format.id === $('#background-format').value);
+  const fragment = document.createDocumentFragment();
+  for (const artwork of backgrounds.artworks) {
+    const variant = artwork.variants[format.id];
+    const card = document.createElement('article');
+    card.className = 'background-card';
+    const frame = document.createElement('div');
+    frame.className = 'background-preview';
+    const img = document.createElement('img');
+    Object.assign(img, { src: backgroundURL(variant.preview.file), alt: artwork.alt,
+      width: variant.preview.width, height: variant.preview.height, loading: 'lazy', decoding: 'async' });
+    frame.append(img);
+    const info = document.createElement('div');
+    info.className = 'background-info';
+    const title = document.createElement('h2');
+    title.textContent = artwork.title;
+    const details = document.createElement('p');
+    const size = variant.bytes >= 1000000 ? `${(variant.bytes / 1000000).toFixed(1)} MB` : `${Math.ceil(variant.bytes / 1000)} KB`;
+    details.textContent = `JPG · ${size}`;
+    const link = document.createElement('a');
+    link.className = 'button button-outlined';
+    link.href = backgroundURL(variant.file);
+    link.download = variant.file.split('/').at(-1);
+    link.textContent = 'Download';
+    link.setAttribute('aria-label', `Download ${artwork.title}, ${format.label}, ${format.width} by ${format.height}`);
+    info.append(title, details, link);
+    card.append(frame, info);
+    fragment.append(card);
+  }
+  $('#background-grid').replaceChildren(fragment);
+  $('#background-grid').dataset.layout = format.layout;
+  $('#background-status').textContent = '';
+}
+$('#background-format').addEventListener('change', renderBackgrounds);
+$('#background-retry').addEventListener('click', loadBackgrounds);
 
 let glyphs;
 let glyphLoading = false;

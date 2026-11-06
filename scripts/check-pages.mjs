@@ -51,7 +51,7 @@ async function checkComponents(url) {
   assert.equal(evaluate('document.querySelector(".gallery-brand .ui-brand-subtitle").textContent'), 'design library');
   assert.deepEqual(evaluate(`([...document.querySelectorAll('.gallery-site-links [data-design-page]')]
     .map(link => [link.dataset.designPage, new URL(link.href).pathname]))`),
-  ['overview', 'typography', 'colors', 'spacing', 'brand', 'resources'].map(page => [page, url.pathname]));
+  ['overview', 'typography', 'colors', 'spacing', 'brand', 'backgrounds', 'resources'].map(page => [page, url.pathname]));
   click('.gallery-component-links a[href="#codebox"]');
   browser(['wait', '--fn', 'document.querySelector(".gallery-component-links [aria-current=location]").hash === "#codebox"']);
   click('.gallery-site-links [data-surface="tui"]');
@@ -92,6 +92,13 @@ async function checkComponents(url) {
     browser(['--args', '--blink-settings=scriptEnabled=false', 'open', url.href], undefined, staticSession);
     browser(['set', 'viewport', '375', '812'], undefined, staticSession);
     browser(['set', 'media', 'dark'], undefined, staticSession);
+    browser(['focus', 'noscript a[href="assets/backgrounds/downloads.html"]'], undefined, staticSession);
+    browser(['press', 'Enter'], undefined, staticSession);
+    browser(['wait', '--fn', 'location.pathname.endsWith("/assets/backgrounds/downloads.html")'], undefined, staticSession);
+    assert.equal(browser(['eval', 'document.querySelectorAll("a[download]").length'], undefined, staticSession).result, 56);
+    browser(['focus', 'a[href="../../#backgrounds"]'], undefined, staticSession);
+    browser(['press', 'Enter'], undefined, staticSession);
+    browser(['wait', '--fn', 'location.hash === "#backgrounds"'], undefined, staticSession);
     for (const selector of ['.nav-link[href="components/"]', '.gallery-site-links [data-surface="tui"]', '.gallery-brand']) {
       assert.equal(browser(['eval', '--stdin'], `document.documentElement.classList.contains('has-navigation') || document.documentElement.dataset.galleryReady === 'true'`, staticSession).result, false);
       browser(['click', selector], undefined, staticSession);
@@ -104,6 +111,64 @@ async function checkComponents(url) {
   console.log('Integrated brand, Web and TUI navigation, theme continuity, mobile keyboard access, static navigation and downloads pass under /design/.');
 }
 function evaluate(source) { return browser(['eval', '--stdin'], source).result; }
+async function checkBackgrounds(url) {
+  const catalogURL = new URL('assets/backgrounds/catalog.json', url);
+  const catalog = await (await fetch(catalogURL)).json();
+  const assets = new Map();
+  for (const artwork of catalog.artworks) {
+    for (const variant of Object.values(artwork.variants)) {
+      assets.set(variant.file, variant.bytes);
+      assets.set(variant.preview.file, undefined);
+    }
+  }
+  for (const [file, bytes] of assets) {
+    const target = new URL(file, catalogURL);
+    assert.ok(target.pathname.startsWith(url.pathname));
+    const response = await fetch(target, { method: 'HEAD' });
+    assert.equal(response.status, 200, `Missing background: ${file}`);
+    assert.equal(response.headers.get('content-type'), 'image/jpeg');
+    if (bytes !== undefined) assert.equal(Number(response.headers.get('content-length')), bytes);
+  }
+  evaluate(`window.backgroundFetch = window.fetch;
+    window.fetch = (...args) => String(args[0]).includes('backgrounds/catalog.json')
+      ? Promise.resolve(new Response('', { status: 503 })) : window.backgroundFetch(...args);
+    location.hash = '#backgrounds';`);
+  browser(['wait', '--fn', '!document.querySelector("#background-retry").hidden']);
+  assert.equal(evaluate('document.querySelector("#background-format").disabled'), true);
+  evaluate('window.fetch = window.backgroundFetch; delete window.backgroundFetch;');
+  browser(['focus', '#background-retry']);
+  browser(['press', 'Enter']);
+  browser(['wait', '--fn', 'document.querySelectorAll(".background-card").length === 8']);
+  assert.equal(evaluate('document.activeElement.id'), 'background-format', 'Retry must retain usable focus');
+  for (const format of catalog.formats) {
+    browser(['select', '#background-format', format.id]);
+    assert.equal(evaluate('document.activeElement.id'), 'background-format');
+    const cards = evaluate(`([...document.querySelectorAll('.background-card')].map(card => ({
+      preview: card.querySelector('img').src, download: card.querySelector('a').href,
+      filename: card.querySelector('a').download,
+      fit: getComputedStyle(card.querySelector('img')).objectFit,
+    })))`);
+    for (const [index, card] of cards.entries()) {
+      const variant = catalog.artworks[index].variants[format.id];
+      assert.equal(card.preview, new URL(variant.preview.file, catalogURL).href);
+      assert.equal(card.download, new URL(variant.file, catalogURL).href);
+      assert.equal(card.filename, variant.file.split('/').at(-1));
+      assert.equal(card.fit, 'contain');
+    }
+    browser(['wait', '--fn', 'document.querySelector(".background-card img").complete && document.querySelector(".background-card img").naturalWidth > 0']);
+  }
+  evaluate("location.hash = '#overview'");
+  browser(['wait', '--fn', '!document.querySelector("#page-overview").hidden']);
+  evaluate("location.hash = '#backgrounds'");
+  browser(['wait', '--fn', '!document.querySelector("#page-backgrounds").hidden']);
+  assert.equal(evaluate('document.querySelector("#background-format").value'), 'link-preview');
+  for (const format of ['mobile-fhd', 'social-header']) {
+    browser(['select', '#background-format', format]);
+    browser(['set', 'viewport', '320', '740']);
+    assert.ok(evaluate('document.documentElement.scrollWidth <= innerWidth'), `Background overflow: ${format}`);
+  }
+  console.log('Background previews, downloads, format selection, retry focus and mobile layouts pass under /design/.');
+}
 function click(selector) {
   browser(['scrollintoview', selector]);
   browser(['wait', '--fn', `(() => {
@@ -317,8 +382,9 @@ try {
       delete window.savedClipboardWrite; delete window.copiedCode;`);
   }
 
+  await checkBackgrounds(url);
   browser(['set', 'viewport', '375', '812']);
-  for (const page of ['overview', 'typography', 'colors', 'spacing', 'brand', 'resources']) {
+  for (const page of ['overview', 'typography', 'colors', 'spacing', 'brand', 'backgrounds', 'resources']) {
     click('#open-menu');
     click(`.nav-link[href="#${page}"]`);
     browser(['wait', '--fn', `!document.querySelector('#page-${page}').hidden`]);
@@ -328,7 +394,7 @@ try {
     assert.ok(layout.content <= layout.width, `${page} overflows a 375px viewport: ${JSON.stringify(layout)}`);
     assert.equal(layout.menuClosed, true);
   }
-  console.log('Production /design/ preview: 28 font faces, glyph search, controls, copy, theme and six mobile pages pass.');
+  console.log('Production /design/ preview: 28 font faces, glyph search, controls, copy, theme and seven mobile pages pass.');
   await checkComponents(url);
   execFileSync(process.execPath, ['scripts/check-flame-browser.mjs', url.href], {
     cwd: root, stdio: 'inherit', timeout: 60000,
