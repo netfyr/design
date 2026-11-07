@@ -1,0 +1,631 @@
+{
+  "version": 1,
+  "defaultFormat": "desktop-fhd",
+  "formats": [
+    {
+      "id": "desktop-fhd",
+      "group": "Wallpapers",
+      "label": "Desktop · Full HD",
+      "width": 1920,
+      "height": 1080,
+      "layout": "landscape",
+      "note": "Landscape composition. Larger sizes are resized exports of the same artwork."
+    },
+    {
+      "id": "desktop-qhd",
+      "group": "Wallpapers",
+      "label": "Desktop · QHD",
+      "width": 2560,
+      "height": 1440,
+      "layout": "landscape",
+      "note": "Landscape composition. Larger sizes are resized exports of the same artwork."
+    },
+    {
+      "id": "desktop-4k",
+      "group": "Wallpapers",
+      "label": "Desktop · 4K",
+      "width": 3840,
+      "height": 2160,
+      "layout": "landscape",
+      "note": "Landscape composition. Larger sizes are resized exports of the same artwork."
+    },
+    {
+      "id": "mobile-fhd",
+      "group": "Wallpapers",
+      "label": "Phone · Full HD",
+      "width": 1080,
+      "height": 1920,
+      "layout": "portrait",
+      "note": "Portrait composition with room above the artwork for a clock."
+    },
+    {
+      "id": "mobile-qhd",
+      "group": "Wallpapers",
+      "label": "Phone · QHD",
+      "width": 1440,
+      "height": 2560,
+      "layout": "portrait",
+      "note": "Portrait composition with room above the artwork for a clock."
+    },
+    {
+      "id": "social-header",
+      "group": "Social",
+      "label": "Bluesky / Fediverse header",
+      "width": 1500,
+      "height": 500,
+      "layout": "header",
+      "note": "Wide composition with space on the left for a profile photo. Clients may crop headers differently."
+    },
+    {
+      "id": "link-preview",
+      "group": "Social",
+      "label": "Link preview",
+      "width": 1200,
+      "height": 630,
+      "layout": "link",
+      "note": "Landscape artwork framed for a shared link card."
+    }
+  ],
+  "artworks": [
+    {
+      "id": "01-orbit",
+      "title": "Orbit",
+      "alt": "A globe of thin terminal strokes with an orange orbital path. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-01-orbit-1920x1080.jpg",
+          "bytes": 228072,
+          "preview": {
+            "file": "previews/01-orbit-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-01-orbit-2560x1440.jpg",
+          "bytes": 369281,
+          "preview": {
+            "file": "previews/01-orbit-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-01-orbit-3840x2160.jpg",
+          "bytes": 735009,
+          "preview": {
+            "file": "previews/01-orbit-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-01-orbit-1080x1920.jpg",
+          "bytes": 171484,
+          "preview": {
+            "file": "previews/01-orbit-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-01-orbit-1440x2560.jpg",
+          "bytes": 282804,
+          "preview": {
+            "file": "previews/01-orbit-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-01-orbit-1500x500.jpg",
+          "bytes": 99006,
+          "preview": {
+            "file": "previews/01-orbit-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-01-orbit-1200x630.jpg",
+          "bytes": 94112,
+          "preview": {
+            "file": "previews/01-orbit-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "02-packets",
+      "title": "Packets",
+      "alt": "Two bracketed packet lanes with orange markers and brown selected rows. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-02-packets-1920x1080.jpg",
+          "bytes": 192405,
+          "preview": {
+            "file": "previews/02-packets-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-02-packets-2560x1440.jpg",
+          "bytes": 316582,
+          "preview": {
+            "file": "previews/02-packets-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-02-packets-3840x2160.jpg",
+          "bytes": 643966,
+          "preview": {
+            "file": "previews/02-packets-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-02-packets-1080x1920.jpg",
+          "bytes": 163430,
+          "preview": {
+            "file": "previews/02-packets-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-02-packets-1440x2560.jpg",
+          "bytes": 290285,
+          "preview": {
+            "file": "previews/02-packets-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-02-packets-1500x500.jpg",
+          "bytes": 74950,
+          "preview": {
+            "file": "previews/02-packets-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-02-packets-1200x630.jpg",
+          "bytes": 74480,
+          "preview": {
+            "file": "previews/02-packets-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "03-mesh",
+      "title": "Mesh",
+      "alt": "Five bracketed nodes joined in a sparse mesh, with one orange connection. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-03-mesh-1920x1080.jpg",
+          "bytes": 210971,
+          "preview": {
+            "file": "previews/03-mesh-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-03-mesh-2560x1440.jpg",
+          "bytes": 342379,
+          "preview": {
+            "file": "previews/03-mesh-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-03-mesh-3840x2160.jpg",
+          "bytes": 683937,
+          "preview": {
+            "file": "previews/03-mesh-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-03-mesh-1080x1920.jpg",
+          "bytes": 155013,
+          "preview": {
+            "file": "previews/03-mesh-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-03-mesh-1440x2560.jpg",
+          "bytes": 258975,
+          "preview": {
+            "file": "previews/03-mesh-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-03-mesh-1500x500.jpg",
+          "bytes": 80803,
+          "preview": {
+            "file": "previews/03-mesh-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-03-mesh-1200x630.jpg",
+          "bytes": 85069,
+          "preview": {
+            "file": "previews/03-mesh-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "04-server",
+      "title": "Server",
+      "alt": "Three outlined server rows with orange indicators and one selected row. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-04-server-1920x1080.jpg",
+          "bytes": 194990,
+          "preview": {
+            "file": "previews/04-server-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-04-server-2560x1440.jpg",
+          "bytes": 315440,
+          "preview": {
+            "file": "previews/04-server-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-04-server-3840x2160.jpg",
+          "bytes": 632474,
+          "preview": {
+            "file": "previews/04-server-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-04-server-1080x1920.jpg",
+          "bytes": 190035,
+          "preview": {
+            "file": "previews/04-server-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-04-server-1440x2560.jpg",
+          "bytes": 315815,
+          "preview": {
+            "file": "previews/04-server-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-04-server-1500x500.jpg",
+          "bytes": 88873,
+          "preview": {
+            "file": "previews/04-server-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-04-server-1200x630.jpg",
+          "bytes": 81075,
+          "preview": {
+            "file": "previews/04-server-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "06-wireless",
+      "title": "Wireless",
+      "alt": "A simple wireless mast and thin radiating signal strokes. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-06-wireless-1920x1080.jpg",
+          "bytes": 240955,
+          "preview": {
+            "file": "previews/06-wireless-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-06-wireless-2560x1440.jpg",
+          "bytes": 388638,
+          "preview": {
+            "file": "previews/06-wireless-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-06-wireless-3840x2160.jpg",
+          "bytes": 764022,
+          "preview": {
+            "file": "previews/06-wireless-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-06-wireless-1080x1920.jpg",
+          "bytes": 210633,
+          "preview": {
+            "file": "previews/06-wireless-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-06-wireless-1440x2560.jpg",
+          "bytes": 350025,
+          "preview": {
+            "file": "previews/06-wireless-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-06-wireless-1500x500.jpg",
+          "bytes": 69199,
+          "preview": {
+            "file": "previews/06-wireless-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-06-wireless-1200x630.jpg",
+          "bytes": 97611,
+          "preview": {
+            "file": "previews/06-wireless-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "08-routes",
+      "title": "Routes",
+      "alt": "A branching route diagram with a single orange path. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-08-routes-1920x1080.jpg",
+          "bytes": 194993,
+          "preview": {
+            "file": "previews/08-routes-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-08-routes-2560x1440.jpg",
+          "bytes": 316031,
+          "preview": {
+            "file": "previews/08-routes-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-08-routes-3840x2160.jpg",
+          "bytes": 631783,
+          "preview": {
+            "file": "previews/08-routes-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-08-routes-1080x1920.jpg",
+          "bytes": 170291,
+          "preview": {
+            "file": "previews/08-routes-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-08-routes-1440x2560.jpg",
+          "bytes": 284252,
+          "preview": {
+            "file": "previews/08-routes-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-08-routes-1500x500.jpg",
+          "bytes": 85624,
+          "preview": {
+            "file": "previews/08-routes-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-08-routes-1200x630.jpg",
+          "bytes": 80373,
+          "preview": {
+            "file": "previews/08-routes-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "09-subsea",
+      "title": "Subsea",
+      "alt": "Two dotted shores joined by a thin orange subsea cable. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-09-subsea-1920x1080.jpg",
+          "bytes": 251230,
+          "preview": {
+            "file": "previews/09-subsea-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-09-subsea-2560x1440.jpg",
+          "bytes": 417125,
+          "preview": {
+            "file": "previews/09-subsea-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-09-subsea-3840x2160.jpg",
+          "bytes": 837623,
+          "preview": {
+            "file": "previews/09-subsea-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-09-subsea-1080x1920.jpg",
+          "bytes": 196274,
+          "preview": {
+            "file": "previews/09-subsea-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-09-subsea-1440x2560.jpg",
+          "bytes": 350648,
+          "preview": {
+            "file": "previews/09-subsea-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-09-subsea-1500x500.jpg",
+          "bytes": 69295,
+          "preview": {
+            "file": "previews/09-subsea-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-09-subsea-1200x630.jpg",
+          "bytes": 97966,
+          "preview": {
+            "file": "previews/09-subsea-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    },
+    {
+      "id": "10-peering",
+      "title": "Peering",
+      "alt": "Two bracketed peers joined by a quiet network link. Warm ink screen texture, seen at a diagonal angle.",
+      "variants": {
+        "desktop-fhd": {
+          "file": "downloads/netfyr-10-peering-1920x1080.jpg",
+          "bytes": 169428,
+          "preview": {
+            "file": "previews/10-peering-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-qhd": {
+          "file": "downloads/netfyr-10-peering-2560x1440.jpg",
+          "bytes": 281586,
+          "preview": {
+            "file": "previews/10-peering-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "desktop-4k": {
+          "file": "downloads/netfyr-10-peering-3840x2160.jpg",
+          "bytes": 583632,
+          "preview": {
+            "file": "previews/10-peering-landscape.jpg",
+            "width": 800,
+            "height": 450
+          }
+        },
+        "mobile-fhd": {
+          "file": "downloads/netfyr-10-peering-1080x1920.jpg",
+          "bytes": 144888,
+          "preview": {
+            "file": "previews/10-peering-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "mobile-qhd": {
+          "file": "downloads/netfyr-10-peering-1440x2560.jpg",
+          "bytes": 252634,
+          "preview": {
+            "file": "previews/10-peering-portrait.jpg",
+            "width": 360,
+            "height": 640
+          }
+        },
+        "social-header": {
+          "file": "downloads/netfyr-10-peering-1500x500.jpg",
+          "bytes": 45222,
+          "preview": {
+            "file": "previews/10-peering-header.jpg",
+            "width": 900,
+            "height": 300
+          }
+        },
+        "link-preview": {
+          "file": "downloads/netfyr-10-peering-1200x630.jpg",
+          "bytes": 67355,
+          "preview": {
+            "file": "previews/10-peering-link.jpg",
+            "width": 800,
+            "height": 420
+          }
+        }
+      }
+    }
+  ]
+}

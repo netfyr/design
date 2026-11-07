@@ -75,7 +75,7 @@ for (const file of [...sources, ...assets.keys()]) {
 }
 const allowed = new Set(artifactFiles);
 const base = new URL('https://gallery.invalid/components/');
-const designPages = new Set(['overview', 'typography', 'colors', 'spacing', 'brand', 'resources']);
+const designPages = new Set(['overview', 'typography', 'colors', 'spacing', 'brand', 'backgrounds', 'resources']);
 for (const file of sources.filter(file => file.endsWith('.html'))) {
   const html = await readFile(path.join(output, file), 'utf8');
   const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
